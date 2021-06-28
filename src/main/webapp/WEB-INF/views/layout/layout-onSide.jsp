@@ -9,8 +9,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공부페이지</title>
-    <!-- jQuery import -->
-    <script src="/resources/js/jquery-3.6.0.min.js"></script>
     <!-- reset.css import -->
     <link rel="stylesheet" href="/resources/css/reset.css">
     <!-- 사용자 import -->

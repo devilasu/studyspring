@@ -44,9 +44,9 @@ public class AdminMenuDAOImpl implements AdminMenuDAO{
 	}
 
 	@Override
-	public MenuVO readMenu(Integer menuIndex) throws Exception {
+	public MenuVO readMenu(String menu_type) throws Exception {
 		// TODO Auto-generated method stub
-		return sqlSession.selectOne("adminMenuMapper.readMenu", menuIndex);
+		return sqlSession.selectOne("adminMenuMapper.readMenu", menu_type);
 	}
 
 }

@@ -5,11 +5,11 @@
 <delete id="deleteMenu">
 	delete from tbl_admin_menu
 	where
-	menu_index = #{menu_index}
+	menu_type = #{menu_type}
 </delete>
 <insert id="insertMenu">
 	insert into tbl_admin_menu values(
-	#{menu_index},
+	#{menu_type},
 	#{menu_name},
 	#{menu_order},
 	#{menu_parent}
@@ -26,7 +26,7 @@
 
 <select id="readMenu" resultType="com.home.vo.MenuVO">
 	select * from tbl_admin_menu
-	where menu_index=#{menu_index}
+	where menu_type=#{menu_type}
 </select>
 
 <select id="selectMenu" resultType="com.home.vo.MenuVO">
@@ -37,7 +37,7 @@
 		</when>
 		<otherwise>
 			select * from tbl_admin_menu
-			where menu_parent=#{menu_parent}
+			where menu_parent=#{menu_type}
 		</otherwise>
 	</choose>
 </select>

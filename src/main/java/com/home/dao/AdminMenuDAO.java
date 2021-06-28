@@ -14,5 +14,5 @@ public interface AdminMenuDAO {
 	public int deleteMenu(MenuVO menuVO) throws Exception;
 	public int updateMenu(MenuVO menuVO) throws Exception;
 	public List<MenuVO> selectMenu(Integer parent) throws Exception;
-	public MenuVO readMenu(Integer menuIndex) throws Exception;
+	public MenuVO readMenu(String menu_type) throws Exception;
 }

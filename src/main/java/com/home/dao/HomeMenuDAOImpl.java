@@ -44,9 +44,9 @@ public class HomeMenuDAOImpl implements HomeMenuDAO{
 	}
 
 	@Override
-	public MenuVO readMenu(Integer menuIndex) throws Exception {
+	public MenuVO readMenu(String menu_type) throws Exception {
 		// TODO Auto-generated method stub
-		return sqlSession.selectOne("menuMapper.readMenu",menuIndex);
+		return sqlSession.selectOne("menuMapper.readMenu",menu_type);
 	}
 	
 	

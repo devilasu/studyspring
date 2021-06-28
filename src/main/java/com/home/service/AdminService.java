@@ -9,5 +9,9 @@ import com.home.vo.MenuVO;
  *
  */
 public interface AdminService {
+	public int insertAdminMenu(MenuVO menuVO) throws Exception;
+	public int deleteAdminMenu(MenuVO menuVO) throws Exception;
+	public int updateAdminMenu(MenuVO menuVO) throws Exception;
 	public List<MenuVO> selectAdminMenu(Integer parent) throws Exception;
+	public MenuVO readAdminMenu(String menu_type) throws Exception;
 }

@@ -5,11 +5,11 @@
 <delete id="deleteMenu">
 	delete from tbl_home_menu
 	where
-	menu_index = #{menu_index}
+	menu_type = #{menu_type}
 </delete>
 <insert id="insertMenu">
 	insert into tbl_home_menu values(
-	#{menu_index},
+	#{menu_type},
 	#{menu_name},
 	#{menu_order},
 	#{menu_parent}
@@ -25,16 +25,18 @@
 </update>
 
 <select id="readMenu" resultType="com.home.vo.MenuVO">
-	select * from tbl_home_menu where menu_index=#{menu_index}
+	select * from tbl_home_menu where menu_type=#{menu_type}
 </select>
 
 <select id="selectMenu" resultType="com.home.vo.MenuVO">
 	<choose>
 		<when test="#{menu_parent==null}">
-			select * from tbl_home_menu where menu_parent is null
+			select * from tbl_home_menu
+			where menu_parent is null
 		</when>
 		<otherwise>
-			select * from tbl_home_menu where menu_parent=#{menu_parent}
+			select * from tbl_home_menu
+			where menu_parent=#{menu_type}
 		</otherwise>
 	</choose>
 </select>

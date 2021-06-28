@@ -1,7 +1,6 @@
 #### 20210629 (화) 작업
-- admin index 페이지 구현.
-- admin menu db관리로 구현.
-- 
+- 게시판 구현. list는 a태그를 이용하여 간편하게 구현.
+- CUD는 AJAX를 통하여 구현하기.
 
 #### 해야할 일
 - admin부분 먼저 구현해보자.
@@ -58,6 +57,13 @@
 - AdminController, HomeController, CommonController
 - 컨트롤러에서 check후 return값 결정. 
 - 이 경우에는 index는 common으로, (각 페이지의 세부 구성이 우선시 되어야 하겠다. 안 그러면 중반부쯤에 전부 꼬일 듯.)
+
+#### 20210629 (월) 작업
+- admin index 페이지 구현.
+- admin menu db관리로 구현.
+- AOP로 admin에 nav 메뉴 전송 부분 추가.
+- DB 변수 이름 정리.
+- 게시판 DB 생성.
 
 #### 20210627(일) 작업
 - AOP 구현에서 문제 발생.
