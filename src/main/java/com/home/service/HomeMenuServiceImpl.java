@@ -6,17 +6,17 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
-import com.home.dao.MenuDAO;
+import com.home.dao.HomeMenuDAO;
 import com.home.vo.MenuVO;
 
 @Service
-public class MenuServiceImpl implements MenuService{
+public class HomeMenuServiceImpl implements HomeMenuService{
 
 	@Inject
-	MenuDAO menuDAO;
+	HomeMenuDAO menuDAO;
 	
 	@Override
-	public List<MenuVO> selectMenu(Integer parent) throws Exception {
+	public List<MenuVO> selectHomeMenu(Integer parent) throws Exception {
 		// TODO Auto-generated method stub
 		return menuDAO.selectMenu(parent);
 	}

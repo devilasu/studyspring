@@ -9,7 +9,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
-import com.home.dao.MenuDAO;
+import com.home.dao.HomeMenuDAO;
 
 @RunWith(SpringJUnit4ClassRunner.class) 
 @ContextConfiguration(classes= {com.home.javaconfig.RootConfig.class,com.home.javaconfig.ServletConfig.class})
@@ -21,7 +21,7 @@ public class TestJava {
 	@Inject
 	SqlSession sqlSession;
 	@Inject
-	MenuDAO topMenuDAO;
+	HomeMenuDAO topMenuDAO;
 	
 	@Test
 	public void testDAO() throws Exception{

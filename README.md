@@ -1,3 +1,8 @@
+#### 20210629 (화) 작업
+- admin index 페이지 구현.
+- admin menu db관리로 구현.
+- 
+
 #### 해야할 일
 - admin부분 먼저 구현해보자.
 - admin의 메뉴도 db로 관리. tiles nav, left 수정 필요.

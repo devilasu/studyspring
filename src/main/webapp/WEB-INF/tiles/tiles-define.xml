@@ -6,20 +6,20 @@
 <tiles-definitions>
  
  	<!-- noSide 타일즈 -->
- 	 <definition name="*.index.tiles" template="/WEB-INF/views/tiles/layout/layout-noSide.jsp">
-        <put-attribute name="header" value="/WEB-INF/views/tiles/{1}/include/header.jsp" />
-        <put-attribute name="nav" value="/WEB-INF/views/tiles/{1}/include/nav.jsp" />
-        <put-attribute name="content" value="/WEB-INF/views/tiles/{1}/index.jsp" />
-        <put-attribute name="footer" value="/WEB-INF/views/tiles/{1}/include/footer.jsp" />
+ 	 <definition name="*.index.tile" template="/WEB-INF/views/layout/layout-noSide.jsp">
+        <put-attribute name="header" value="/WEB-INF/views/{1}/include/header.jsp" />
+        <put-attribute name="nav" value="/WEB-INF/views/{1}/include/nav.jsp" />
+        <put-attribute name="content" value="/WEB-INF/views/{1}/index.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/views/{1}/include/footer.jsp" />
     </definition>
     
     <!-- onSide 타일즈 -->    
-    <definition name="*.*.tiles" template="/WEB-INF/views/tiles/layout/layout-onSide.jsp">
-        <put-attribute name="header" value="/WEB-INF/views/tiles/{1}/include/header.jsp" />
-        <put-attribute name="nav" value="/WEB-INF/views/tiles/{1}/include/nav.jsp" />
-        <put-attribute name="side" value="/WEB-INF/views/tiles/{1}/include/left.jsp" />
-        <put-attribute name="content" value="/WEB-INF/views/tiles/{1}/{2}.jsp" />
-        <put-attribute name="footer" value="/WEB-INF/views/tiles/{1}/include/footer.jsp" />
+    <definition name="*.*.tiles" template="/WEB-INF/views/layout/layout-onSide.jsp">
+        <put-attribute name="header" value="/WEB-INF/views/{1}/include/header.jsp" />
+        <put-attribute name="nav" value="/WEB-INF/views/{1}/include/nav.jsp" />
+        <put-attribute name="side" value="/WEB-INF/views/{1}/include/left.jsp" />
+        <put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/views/{1}/include/footer.jsp" />
     </definition>
     
 </tiles-definitions>

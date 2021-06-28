@@ -1,7 +1,5 @@
 package com.home.aop;
 
-import java.util.List;
-
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 
@@ -14,21 +12,22 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-import com.home.service.HomeMenuService;
+import com.home.service.AdminService;
 
 @Component
 @Aspect
-public class HomeAdvice {
-	Logger logger = LoggerFactory.getLogger(HomeAdvice.class);
+public class AdminAdvice {
+	Logger logger = LoggerFactory.getLogger(AdminAdvice.class);
 	
 	@Inject
-	HomeMenuService homeMenuService;
+	private AdminService adminService;
 	
-	@Around("execution(* com.home.controller.HomeController.*(..))")
-	public Object homeMenu(ProceedingJoinPoint pjp) throws Throwable{
+	@Around("execution(* com.home.controller.AdminController.*(..))")
+	public Object AdminMenu(ProceedingJoinPoint pjp) throws Throwable{
 		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
-		request.setAttribute("homeMenuList", homeMenuService.selectHomeMenu(null));
-		logger.info("홈 매니저 호출");
+		request.setAttribute("adminMenuList", adminService.selectAdminMenu(null));
+		logger.info("어드민 어드바이스 호출");
 		return pjp.proceed();
 	}
+
 }

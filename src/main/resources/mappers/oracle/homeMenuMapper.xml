@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="menuMapper">
+<mapper namespace="homeMenuMapper">
 
 <delete id="deleteMenu">
-	delete from tbl_menu
+	delete from tbl_home_menu
 	where
 	menu_index = #{menu_index}
 </delete>
 <insert id="insertMenu">
-	insert into tbl_menu values(
+	insert into tbl_home_menu values(
 	#{menu_index},
 	#{menu_name},
 	#{menu_order},
@@ -17,7 +17,7 @@
 </insert>
 
 <update id="updateMenu">
-	update tbl_menu
+	update tbl_home_menu
 	set
 	menu_name=#{menu_name},
 	menu_parent = #{menu_parent},
@@ -25,16 +25,16 @@
 </update>
 
 <select id="readMenu" resultType="com.home.vo.MenuVO">
-	select * from tbl_menu where menu_index=#{menu_index}
+	select * from tbl_home_menu where menu_index=#{menu_index}
 </select>
 
 <select id="selectMenu" resultType="com.home.vo.MenuVO">
 	<choose>
 		<when test="#{menu_parent==null}">
-			select * from tbl_menu where menu_parent is null
+			select * from tbl_home_menu where menu_parent is null
 		</when>
 		<otherwise>
-			select * from tbl_menu where menu_parent=#{menu_parent}
+			select * from tbl_home_menu where menu_parent=#{menu_parent}
 		</otherwise>
 	</choose>
 </select>
