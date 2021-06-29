@@ -1,5 +1,9 @@
 package com.home.vo;
-
+/**
+ * 이 클래스는 admin, home 메뉴 관리를 위한 오브젝트 입니다.
+ * @author 김영제
+ *
+ */
 public class MenuVO {
 	private String menu_type;
 	private String menu_name;

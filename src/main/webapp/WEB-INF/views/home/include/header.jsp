@@ -8,7 +8,7 @@
                 <span></span>
             </div>
             <!-- 로고 영역 -->
-            <a href="#" class="logo">
+            <a href="/" class="logo">
                 공부페이지
             </a>
             <!-- /로고 영역 -->
