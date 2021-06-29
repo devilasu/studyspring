@@ -1,11 +1,20 @@
 #### 20210630 (수) 작업
 - ajax를 이용하여 content의 tiles만 변경이 가능한가?
 - 만약 ajax로 tiles만 변경이 안된다면 content로 하나의 타일을 만들어서 내부에서 left, right로 처리, ajax 처리를 해야겠다.
-- RestController를 이용하면 변수값으로 받을 수 있는데, 그렇다면 하나의 메서드에서 조건문으로 처리가 가능해진다. 이러한 방법이 좋은걸까? 굳이 할 필요가 없을지도... 코드가 더러워질지도 모르겠다
 
 - 메뉴관리: tbl_board_type, 게시판관리: tbl_board, 유저관리: tbl_member(예정), 상품관리: tbl_product(예정)
 - left에 CRUD를 넣어주고 content에 insert_form, update_form, list, delete
 - nav와 left, content에 어떠한 내용을 넣을지 구상 필요.(꼬여있음)
+
+- admin에서는 noLeft를 사용해도 된다.(CRUD는 한 페이지로 충분히 구현 가능하기 때문에)
+- 사용자가 보는 홈에서는?
+- 홈의 레이아웃 구상이 필요하다. nav와 left의 용도. (홈 부분은 완전 새로 구상하자.)
+
+
+
+- *폐기
+- RestController를 이용하면 변수값으로 받을 수 있는데, 그렇다면 하나의 메서드에서 조건문으로 처리가 가능해진다. 이러한 방법이 좋은걸까? 굳이 할 필요가 없을지도... 코드가 더러워질지도 모르겠다
+- 전송 방식으로 CRUD처리를 하는데 굳이 이럴 필요가 없을 것 같다.
 
 
 #### 해야할 일
