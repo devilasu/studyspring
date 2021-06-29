@@ -5,6 +5,7 @@
 
 - 메뉴관리: tbl_board_type, 게시판관리: tbl_board, 유저관리: tbl_member(예정), 상품관리: tbl_product(예정)
 - left에 CRUD를 넣어주고 content에 insert_form, update_form, list, delete
+- nav와 left, content에 어떠한 내용을 넣을지 구상 필요.(꼬여있음)
 
 
 #### 해야할 일
