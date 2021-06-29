@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="boardTypeMapper">
+
+	<update id="updateBoardType">
+		update tbl_board_type
+		set
+		board_name=#{board_name},
+		board_order=#{board_order},
+		where board_type=#{board_type}
+	</update>
+	<delete id="deleteBoardType">
+		delete from tbl_board_type
+		where board_type=#{board_type}
+	</delete>
+	<insert id="insertBoardType">
+		insert into tbl_board_type(
+			board_type,
+			board_name,
+			board_order
+		)
+		values(
+			#{board_type},
+			#{board_name},
+			#{board_order}
+		)
+	</insert>
+	<select id="readBoardType" resultType="com.home.vo.BoardTypeVO">
+	select * from tbl_board_type
+	where board_type=#{board_type}
+	</select>
+	<select id="selectBoardType" resultType="com.home.vo.BoardTypeVO">
+		select * from tbl_board_type
+	</select>
+</mapper>
