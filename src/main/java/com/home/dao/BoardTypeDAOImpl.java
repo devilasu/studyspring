@@ -5,9 +5,11 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Repository;
 
 import com.home.vo.BoardTypeVO;
 
+@Repository
 public class BoardTypeDAOImpl implements BoardTypeDAO{
 	@Inject
 	private SqlSession sqlSession;
@@ -30,15 +32,15 @@ public class BoardTypeDAOImpl implements BoardTypeDAO{
 	}
 
 	@Override
-	public int deleteBoardType(String boardType) throws Exception {
+	public int deleteBoardType(String board_type) throws Exception {
 		// TODO Auto-generated method stub
-		return 0;
+		return sqlSession.delete("boardTypeMapper.deleteBoardType",board_type);
 	}
 
 	@Override
 	public int updateBoardType(BoardTypeVO boardTypeVO) throws Exception {
 		// TODO Auto-generated method stub
-		return 0;
+		return sqlSession.update("boardTypeMapper.updateBoardType",boardTypeVO);
 	}
 
 }

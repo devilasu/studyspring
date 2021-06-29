@@ -5,8 +5,8 @@
             <ul>
             <c:forEach var="homeMenuVO" items="${homeMenuList}">
                 <li>
-                    <a href="/home/${homeMenuVO.menu_type}">
-                        ${homeMenuVO.menu_name}
+                    <a href="/home/${homeMenuVO.board_type}">
+                        ${homeMenuVO.board_name}
                     </a>
                 </li>
             </c:forEach>

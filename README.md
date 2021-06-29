@@ -1,6 +1,5 @@
-#### 20210629 (화) 작업
-- 게시판 구현. list는 a태그를 이용하여 간편하게 구현.
-- CUD는 AJAX를 통하여 구현하기.
+#### 20210630 (수) 작업
+
 
 #### 해야할 일
 - admin부분 먼저 구현해보자.
@@ -57,6 +56,29 @@
 - AdminController, HomeController, CommonController
 - 컨트롤러에서 check후 return값 결정. 
 - 이 경우에는 index는 common으로, (각 페이지의 세부 구성이 우선시 되어야 하겠다. 안 그러면 중반부쯤에 전부 꼬일 듯.)
+
+#### 20210629 (화) 작업
+- 게시판 nav의 left 구현 완료.
+- left 클릭 시, content부분 수정을 ajax로 못함, tiles가 문제.
+- homeMenu부분 삭제: home의 nav 부분에는 게시판타입(메뉴타입이 될듯)을 출력할 것이기 때문에.
+- 상품정보도 결국은 게시판과 크게 다르지 않기 때문에, board_type대신 home_menu가 되는 것이 낫지 않을까?
+- tbl_board_type는 tbl_home_menu가 더 나을 것 같다.(tbl_board_type에 tbl_board와 tbl_product_type)를 함께 붙이자.
+- 게시판 구현. list는 a태그를 이용하여 간편하게 구현.
+- CUD는 AJAX를 통하여 구현하기.
+
+
+```
+<script src="/resources/js/jquery-3.6.0.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$("#btn_left_menu").click(function(){
+			$.ajax({
+				
+			});
+		});
+	});
+</script>
+```
 
 #### 20210629 (월) 작업
 - admin index 페이지 구현.

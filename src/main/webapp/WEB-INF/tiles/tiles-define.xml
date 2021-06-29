@@ -6,7 +6,7 @@
 <tiles-definitions>
  
  	<!-- noSide 타일즈 -->
- 	 <definition name="*.index.tile" template="/WEB-INF/views/layout/layout-noSide.jsp">
+ 	 <definition name="*.index" template="/WEB-INF/views/layout/layout-noLeft.jsp">
         <put-attribute name="header" value="/WEB-INF/views/{1}/include/header.jsp" />
         <put-attribute name="nav" value="/WEB-INF/views/{1}/include/nav.jsp" />
         <put-attribute name="content" value="/WEB-INF/views/{1}/index.jsp" />
@@ -14,7 +14,7 @@
     </definition>
     
     <!-- onSide 타일즈 -->    
-    <definition name="*.*.tiles" template="/WEB-INF/views/layout/layout-onSide.jsp">
+    <definition name="*.*.tiles" template="/WEB-INF/views/layout/layout-onLeft.jsp">
         <put-attribute name="header" value="/WEB-INF/views/{1}/include/header.jsp" />
         <put-attribute name="nav" value="/WEB-INF/views/{1}/include/nav.jsp" />
         <put-attribute name="side" value="/WEB-INF/views/{1}/include/left.jsp" />
