@@ -1,5 +1,9 @@
 #### 20210630 (수) 작업
-- ajax를 이용하여 content의 tiles만 변경이 가능한가?
+- homeMenu를 다시 살려야 함.(의미 있는가? 이 부분은 신상품, 인기상품, 추천상품, 할인상품등의 품목이 들어갈 예정.)
+- 장점: db에 추가하고 Controller에 추가, jsp생성으로 손쉽게 유지보수 가능.
+- 인기상품, 추천상품을 표시해주는 테이블을 생성. 유지보수는 쉬워지는데 성능은? 일단 해보자.
+- db는 안지워져서 존재, vo부터 구현하면 재생 가능.
+- ajax를 이용하여 content의 tiles만 변경이 가능한가? javascript로 제어 해볼만 하다.
 - 만약 ajax로 tiles만 변경이 안된다면 content로 하나의 타일을 만들어서 내부에서 left, right로 처리, ajax 처리를 해야겠다.
 
 - 메뉴관리: tbl_board_type, 게시판관리: tbl_board, 유저관리: tbl_member(예정), 상품관리: tbl_product(예정)
