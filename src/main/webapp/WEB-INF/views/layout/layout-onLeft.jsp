@@ -21,7 +21,7 @@
 	    <tiles:insertAttribute name="header"/>
 	    <tiles:insertAttribute name="nav" />
 	    <div class="container">
-		 	<tiles:insertAttribute name="side"/>
+		 	<tiles:insertAttribute name="left"/>
 		 	<tiles:insertAttribute name="content" />
 	 	</div>
 	 	<tiles:insertAttribute name="footer" />

@@ -5,29 +5,29 @@
 	<update id="updateBoardType">
 		update tbl_board_type
 		set
-		board_name=#{board_name},
-		board_order=#{board_order},
-		where board_type=#{board_type}
+		name=#{name},
+		orders=#{orders},
+		where type=#{type}
 	</update>
 	<delete id="deleteBoardType">
 		delete from tbl_board_type
-		where board_type=#{board_type}
+		where type=#{type}
 	</delete>
 	<insert id="insertBoardType">
 		insert into tbl_board_type(
-			board_type,
-			board_name,
-			board_order
+			type,
+			name,
+			orders
 		)
 		values(
-			#{board_type},
-			#{board_name},
-			#{board_order}
+			#{type},
+			#{name},
+			#{orders}
 		)
 	</insert>
 	<select id="readBoardType" resultType="com.home.vo.BoardTypeVO">
 	select * from tbl_board_type
-	where board_type=#{board_type}
+	where type=#{type}
 	</select>
 	<select id="selectBoardType" resultType="com.home.vo.BoardTypeVO">
 		select * from tbl_board_type

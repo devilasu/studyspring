@@ -5,19 +5,19 @@
  
 <tiles-definitions>
  
- 	<!-- noSide 타일즈 -->
- 	 <definition name="*.index" template="/WEB-INF/views/layout/layout-noLeft.jsp">
+ 	<!-- noLeft 타일즈 -->
+ 	 <definition name="no.*.*" template="/WEB-INF/views/layout/layout-noLeft.jsp">
         <put-attribute name="header" value="/WEB-INF/views/{1}/include/header.jsp" />
         <put-attribute name="nav" value="/WEB-INF/views/{1}/include/nav.jsp" />
-        <put-attribute name="content" value="/WEB-INF/views/{1}/index.jsp" />
+        <put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp" />
         <put-attribute name="footer" value="/WEB-INF/views/{1}/include/footer.jsp" />
     </definition>
     
-    <!-- onSide 타일즈 -->    
-    <definition name="*.*.tiles" template="/WEB-INF/views/layout/layout-onLeft.jsp">
+    <!-- onLeft 타일즈 -->    
+    <definition name="on.*.*" template="/WEB-INF/views/layout/layout-onLeft.jsp">
         <put-attribute name="header" value="/WEB-INF/views/{1}/include/header.jsp" />
         <put-attribute name="nav" value="/WEB-INF/views/{1}/include/nav.jsp" />
-        <put-attribute name="side" value="/WEB-INF/views/{1}/include/left.jsp" />
+        <put-attribute name="left" value="/WEB-INF/views/{1}/include/left.jsp" />
         <put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp" />
         <put-attribute name="footer" value="/WEB-INF/views/{1}/include/footer.jsp" />
     </definition>

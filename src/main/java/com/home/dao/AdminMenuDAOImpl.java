@@ -26,9 +26,9 @@ public class AdminMenuDAOImpl implements AdminMenuDAO{
 	}
 
 	@Override
-	public int deleteMenu(MenuVO menuVO) throws Exception {
+	public int deleteMenu(String menu_type) throws Exception {
 		// TODO Auto-generated method stub
-		return sqlSession.delete("adminMenuMapper.deleteMenu",menuVO);
+		return sqlSession.delete("adminMenuMapper.deleteMenu",menu_type);
 	}
 
 	@Override

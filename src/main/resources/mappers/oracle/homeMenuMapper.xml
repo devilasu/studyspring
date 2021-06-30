@@ -5,38 +5,38 @@
 <delete id="deleteMenu">
 	delete from tbl_home_menu
 	where
-	menu_type = #{menu_type}
+	menu_type = #{type}
 </delete>
 <insert id="insertMenu">
 	insert into tbl_home_menu values(
-	#{menu_type},
-	#{menu_name},
-	#{menu_order},
-	#{menu_parent}
+	#{type},
+	#{name},
+	#{order},
+	#{parent}
 	)
 </insert>
 
 <update id="updateMenu">
 	update tbl_home_menu
 	set
-	menu_name=#{menu_name},
-	menu_parent = #{menu_parent},
-	menu_order = #{menu_order}
+	menu_name=#{name},
+	menu_parent = #{parent},
+	menu_order = #{orders}
 </update>
 
 <select id="readMenu" resultType="com.home.vo.MenuVO">
-	select * from tbl_home_menu where menu_type=#{menu_type}
+	select * from tbl_home_menu where type=#{type}
 </select>
 
 <select id="selectMenu" resultType="com.home.vo.MenuVO">
 	<choose>
 		<when test="#{menu_parent==null}">
 			select * from tbl_home_menu
-			where menu_parent is null
+			where parent is null
 		</when>
 		<otherwise>
 			select * from tbl_home_menu
-			where menu_parent=#{menu_type}
+			where parent=#{type}
 		</otherwise>
 	</choose>
 </select>

@@ -3,62 +3,61 @@ package com.home.vo;
 import java.util.Date;
 
 public class BoardVO {
-	private Integer board_index;
-	private String board_title;
-	private String board_content;
-	private String board_writer;
-	private Integer board_viewcount;
-	private Date board_reg_date;
-	private Date board_update_date;
+	private Integer idx;
+	private String title;
+	private String content;
+	private String writer;
+	private Integer viewcount;
+	private Date reg_date;
+	private Date update_date;
 	private String board_type;
 	@Override
 	public String toString() {
-		return "BoardVO [board_index=" + board_index + ", board_title=" + board_title + ", board_content="
-				+ board_content + ", board_writer=" + board_writer + ", board_viewcount=" + board_viewcount
-				+ ", board_reg_date=" + board_reg_date + ", board_update_date=" + board_update_date + ", board_type="
-				+ board_type + "]";
+		return "BoardVO [idx=" + idx + ", title=" + title + ", content=" + content + ", writer=" + writer
+				+ ", viewcount=" + viewcount + ", reg_date=" + reg_date + ", update_date=" + update_date
+				+ ", board_type=" + board_type + "]";
 	}
-	public Integer getBoard_index() {
-		return board_index;
+	public Integer getIdx() {
+		return idx;
 	}
-	public void setBoard_index(Integer board_index) {
-		this.board_index = board_index;
+	public void setIdx(Integer idx) {
+		this.idx = idx;
 	}
-	public String getBoard_title() {
-		return board_title;
+	public String getTitle() {
+		return title;
 	}
-	public void setBoard_title(String board_title) {
-		this.board_title = board_title;
+	public void setTitle(String title) {
+		this.title = title;
 	}
-	public String getBoard_content() {
-		return board_content;
+	public String getContent() {
+		return content;
 	}
-	public void setBoard_content(String board_content) {
-		this.board_content = board_content;
+	public void setContent(String content) {
+		this.content = content;
 	}
-	public String getBoard_writer() {
-		return board_writer;
+	public String getWriter() {
+		return writer;
 	}
-	public void setBoard_writer(String board_writer) {
-		this.board_writer = board_writer;
+	public void setWriter(String writer) {
+		this.writer = writer;
 	}
-	public Integer getBoard_viewcount() {
-		return board_viewcount;
+	public Integer getViewcount() {
+		return viewcount;
 	}
-	public void setBoard_viewcount(Integer board_viewcount) {
-		this.board_viewcount = board_viewcount;
+	public void setViewcount(Integer viewcount) {
+		this.viewcount = viewcount;
 	}
-	public Date getBoard_reg_date() {
-		return board_reg_date;
+	public Date getReg_date() {
+		return reg_date;
 	}
-	public void setBoard_reg_date(Date board_reg_date) {
-		this.board_reg_date = board_reg_date;
+	public void setReg_date(Date reg_date) {
+		this.reg_date = reg_date;
 	}
-	public Date getBoard_update_date() {
-		return board_update_date;
+	public Date getUpdate_date() {
+		return update_date;
 	}
-	public void setBoard_update_date(Date board_update_date) {
-		this.board_update_date = board_update_date;
+	public void setUpdate_date(Date update_date) {
+		this.update_date = update_date;
 	}
 	public String getBoard_type() {
 		return board_type;
@@ -67,5 +66,4 @@ public class BoardVO {
 		this.board_type = board_type;
 	}
 	
-
 }

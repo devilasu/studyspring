@@ -1,48 +1,47 @@
-package com.home.service;
+package com.home.dao;
 
 import java.util.List;
 
 import javax.inject.Inject;
 
-import org.springframework.stereotype.Service;
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Repository;
 
-import com.home.dao.AdminMenuDAO;
 import com.home.vo.MenuVO;
 
-@Service
-public class AdminServiceImpl implements AdminService{
+@Repository
+public class HomeMenuDAOImpl implements HomeMenuDAO {
 	@Inject
-	private AdminMenuDAO adminMenuDAO;
+	SqlSession sqlSession;
 
 	@Override
 	public int insertMenu(MenuVO menuVO) throws Exception {
 		// TODO Auto-generated method stub
-		return adminMenuDAO.insertMenu(menuVO);
+		return sqlSession.insert("homeMenuMapper.insertMenu", menuVO);
 	}
 
 	@Override
 	public int deleteMenu(String menu_type) throws Exception {
 		// TODO Auto-generated method stub
-		return adminMenuDAO.deleteMenu(menu_type);
+		return sqlSession.delete("hoemMenuMapper.deleteMenu",menu_type);
 	}
 
 	@Override
 	public int updateMenu(MenuVO menuVO) throws Exception {
 		// TODO Auto-generated method stub
-		return adminMenuDAO.updateMenu(menuVO);
+		return sqlSession.update("homeMenuMapper.updateMenu", menuVO);
 	}
 
 	@Override
 	public List<MenuVO> selectMenu(Integer parent) throws Exception {
-		// TODO Auto-generated method stub
-		return adminMenuDAO.selectMenu(parent);
+		// parent는 null이면 최상위 메뉴.
+		return sqlSession.selectList("homeMenuMapper.selectMenu", parent);
 	}
 
 	@Override
 	public MenuVO readMenu(String menu_type) throws Exception {
 		// TODO Auto-generated method stub
-		return adminMenuDAO.readMenu(menu_type);
+		return sqlSession.selectOne("homeMenuMapper.readMenu",menu_type);
 	}
-	
-	
+
 }

@@ -9,7 +9,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.home.service.BoardService;
 import com.home.service.BoardTypeService;
+import com.home.service.HomeMenuService;
 /**
  * admin 페이지 관리 컨트롤러
  * @author 김영제
@@ -20,18 +22,33 @@ public class AdminController {
 	Logger logger = LoggerFactory.getLogger(AdminController.class);
 	@Inject
 	private BoardTypeService boardTypeService;
+	@Inject
+	private HomeMenuService homeMenuService;
+	@Inject
+	private BoardService boardService;
 	
-	//메뉴관리 요청시 호출.
-	@RequestMapping(value = "/admin/board_list", method = RequestMethod.GET)
+	//게시판관리의 CRUD
+	
+	//게시판관리 요청시 호출.
+	@RequestMapping(value = "/admin/board", method = RequestMethod.GET)
 	public String adminBoardList(Model model) throws Exception{
 		
+		model.addAttribute("boardList", boardService.selectBoard());
 		model.addAttribute("leftMenuList", boardTypeService.selectBoardType());	//left에 전달하는 메뉴목록.
-		return "admin.boardList.tiles";
+		return "on.admin.boardList";
 	}
+	
+	//메뉴관리 요청시 호출.
+		@RequestMapping(value = "/admin/menu_list", method = RequestMethod.GET)
+		public String homeMenuList(Model model) throws Exception{
+			
+			model.addAttribute("leftMenuList", homeMenuService.selectMenu(null));	//left에 전달하는 메뉴목록.
+			return "on.admin.menuList";
+		}
 	
 	@RequestMapping(value = "/admin", method = RequestMethod.GET)
 	public String adminMainPage() throws Exception{
 		logger.info("어드민 컨트롤러 호출");
-		return "admin.index";
+		return "no.admin.index";
 	}
 }

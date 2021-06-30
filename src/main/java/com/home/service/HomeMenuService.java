@@ -1,15 +1,10 @@
-package com.home.dao;
+package com.home.service;
 
 import java.util.List;
 
 import com.home.vo.MenuVO;
 
-/**
- * AdminMenuDAO입니다.
- * @author 김영제
- *
- */
-public interface AdminMenuDAO {
+public interface HomeMenuService {
 	public int insertMenu(MenuVO menuVO) throws Exception;
 	public int deleteMenu(String menu_type) throws Exception;
 	public int updateMenu(MenuVO menuVO) throws Exception;

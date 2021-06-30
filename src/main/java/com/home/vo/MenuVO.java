@@ -5,39 +5,39 @@ package com.home.vo;
  *
  */
 public class MenuVO {
-	private String menu_type;
-	private String menu_name;
-	private int menu_order;
-	private int menu_parent;
-	
+	private String type;
+	private String name;
+	private int orders;
+	private int parent;
 	@Override
 	public String toString() {
-		return "MenuVO [menu_type=" + menu_type + ", menu_name=" + menu_name + ", menu_order=" + menu_order
-				+ ", menu_parent=" + menu_parent + "]";
+		return "MenuVO [type=" + type + ", name=" + name + ", orders=" + orders + ", parent=" + parent + "]";
 	}
-	public String getMenu_type() {
-		return menu_type;
+	public String getType() {
+		return type;
 	}
-	public void setMenu_type(String menu_type) {
-		this.menu_type = menu_type;
+	public void setType(String type) {
+		this.type = type;
 	}
-	public String getMenu_name() {
-		return menu_name;
+	public String getName() {
+		return name;
 	}
-	public void setMenu_name(String menu_name) {
-		this.menu_name = menu_name;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public int getMenu_order() {
-		return menu_order;
+	public int getOrders() {
+		return orders;
 	}
-	public void setMenu_order(int menu_order) {
-		this.menu_order = menu_order;
+	public void setOrders(int orders) {
+		this.orders = orders;
 	}
-	public int getMenu_parent() {
-		return menu_parent;
+	public int getParent() {
+		return parent;
 	}
-	public void setMenu_parent(int menu_parent) {
-		this.menu_parent = menu_parent;
+	public void setParent(int parent) {
+		this.parent = parent;
 	}
+	
+	
 	
 }

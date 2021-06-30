@@ -12,19 +12,19 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-import com.home.service.BoardTypeService;
+import com.home.service.HomeMenuService;
 
 @Component
 @Aspect
 public class HomeAdvice {
 	Logger logger = LoggerFactory.getLogger(HomeAdvice.class);
 	@Inject
-	BoardTypeService boardTypeService;
+	HomeMenuService homeMenuservice;
 	@Around("execution(* com.home.controller.HomeController.*(..))")
 	public Object homeMenu(ProceedingJoinPoint pjp) throws Throwable{
 		logger.info("홈 어드바이스 호출");
 		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
-		request.setAttribute("homeMenuList", boardTypeService.selectBoardType());
+		request.setAttribute("homeMenuList", homeMenuservice.selectMenu(null));
 		
 		return pjp.proceed();
 	}

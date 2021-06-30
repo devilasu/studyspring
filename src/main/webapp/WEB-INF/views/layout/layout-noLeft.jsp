@@ -16,6 +16,11 @@
     <link rel="stylesheet" href="/resources/css/mobile.css">
     <link rel="stylesheet" href="/resources/css/tablet.css">
 </head>
+<style>
+	section{
+		width:100%;
+	}
+</style>
 <body>
     <div class="wrap">
 	    <tiles:insertAttribute name="header"/>

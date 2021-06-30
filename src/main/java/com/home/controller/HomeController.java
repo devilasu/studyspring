@@ -9,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.home.service.HomeMenuService;
+
 /**
  * Handles requests for the application home page.
  */
@@ -19,9 +21,12 @@ public class HomeController {
 	 */
 	private Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
+	@Inject
+	HomeMenuService homeMenuService;
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model) throws Exception {
 		logger.info("홈 컨트롤러 호출");
-		return "home.index";
+		return "no.home.index";
 	}
 }

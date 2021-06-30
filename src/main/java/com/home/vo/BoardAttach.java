@@ -6,11 +6,11 @@ public class BoardAttach {
 	private String save_file_name;
 	private String real_file_name;
 	private Date reg_date;
-	private Integer board_index;
+	private Integer board_idx;
 	@Override
 	public String toString() {
 		return "BoardAttach [save_file_name=" + save_file_name + ", real_file_name=" + real_file_name + ", reg_date="
-				+ reg_date + ", board_index=" + board_index + "]";
+				+ reg_date + ", board_idx=" + board_idx + "]";
 	}
 	public String getSave_file_name() {
 		return save_file_name;
@@ -30,11 +30,11 @@ public class BoardAttach {
 	public void setReg_date(Date reg_date) {
 		this.reg_date = reg_date;
 	}
-	public Integer getBoard_index() {
-		return board_index;
+	public Integer getBoard_idx() {
+		return board_idx;
 	}
-	public void setBoard_index(Integer board_index) {
-		this.board_index = board_index;
+	public void setBoard_index(Integer board_idx) {
+		this.board_idx = board_idx;
 	}
 	
 

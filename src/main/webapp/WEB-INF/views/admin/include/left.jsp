@@ -3,11 +3,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
             <aside class="aside">
 				<ul>
-					<li>
-						목록
-					</li>
-					<li>
-						추가
-					</li>
+					<c:forEach var="leftMenu" items="${leftMenuList}" >
+						<li>
+							<a href="${leftMenu.type}">
+								${leftMenu.name}
+							</a>
+						</li>
+					</c:forEach>
 				</ul>
             </aside>

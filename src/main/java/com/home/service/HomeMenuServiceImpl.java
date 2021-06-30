@@ -6,43 +6,41 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
-import com.home.dao.AdminMenuDAO;
+import com.home.dao.HomeMenuDAO;
 import com.home.vo.MenuVO;
 
 @Service
-public class AdminServiceImpl implements AdminService{
+public class HomeMenuServiceImpl implements HomeMenuService{
 	@Inject
-	private AdminMenuDAO adminMenuDAO;
-
+	HomeMenuDAO homeMenuDAO;
 	@Override
 	public int insertMenu(MenuVO menuVO) throws Exception {
 		// TODO Auto-generated method stub
-		return adminMenuDAO.insertMenu(menuVO);
+		return homeMenuDAO.insertMenu(menuVO);
 	}
 
 	@Override
 	public int deleteMenu(String menu_type) throws Exception {
 		// TODO Auto-generated method stub
-		return adminMenuDAO.deleteMenu(menu_type);
+		return homeMenuDAO.deleteMenu(menu_type);
 	}
 
 	@Override
 	public int updateMenu(MenuVO menuVO) throws Exception {
 		// TODO Auto-generated method stub
-		return adminMenuDAO.updateMenu(menuVO);
+		return homeMenuDAO.updateMenu(menuVO);
 	}
 
 	@Override
 	public List<MenuVO> selectMenu(Integer parent) throws Exception {
 		// TODO Auto-generated method stub
-		return adminMenuDAO.selectMenu(parent);
+		return homeMenuDAO.selectMenu(parent);
 	}
 
 	@Override
 	public MenuVO readMenu(String menu_type) throws Exception {
 		// TODO Auto-generated method stub
-		return adminMenuDAO.readMenu(menu_type);
+		return homeMenuDAO.readMenu(menu_type);
 	}
-	
 	
 }
