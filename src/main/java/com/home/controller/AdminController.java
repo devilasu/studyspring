@@ -30,7 +30,7 @@ public class AdminController {
 	//게시판관리의 CRUD
 	
 	//게시판관리 요청시 호출.
-	@RequestMapping(value = "/admin/board", method = RequestMethod.GET)
+	@RequestMapping(value = "/admin/boards", method = RequestMethod.GET)
 	public String adminBoardList(Model model) throws Exception{
 		
 		model.addAttribute("boardList", boardService.selectBoard());
@@ -39,12 +39,12 @@ public class AdminController {
 	}
 	
 	//메뉴관리 요청시 호출.
-		@RequestMapping(value = "/admin/menu_list", method = RequestMethod.GET)
-		public String homeMenuList(Model model) throws Exception{
-			
-			model.addAttribute("leftMenuList", homeMenuService.selectMenu(null));	//left에 전달하는 메뉴목록.
-			return "on.admin.menuList";
-		}
+	@RequestMapping(value = "/admin/menus", method = RequestMethod.GET)
+	public String homeMenuList(Model model) throws Exception{
+		
+		model.addAttribute("leftMenuList", homeMenuService.selectMenu(null));	//left에 전달하는 메뉴목록.
+		return "on.admin.menuList";
+	}
 	
 	@RequestMapping(value = "/admin", method = RequestMethod.GET)
 	public String adminMainPage() throws Exception{

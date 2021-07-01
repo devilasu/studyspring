@@ -5,9 +5,9 @@
 				<ul>
 					<c:forEach var="leftMenu" items="${leftMenuList}" >
 						<li>
-							<a href="${leftMenu.type}">
+							<span class="leftMenu" id="${leftMenu.type}" style="cursor:pointer;">
 								${leftMenu.name}
-							</a>
+							</span>
 						</li>
 					</c:forEach>
 				</ul>

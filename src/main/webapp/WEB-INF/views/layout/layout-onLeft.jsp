@@ -13,8 +13,8 @@
     <!-- 사용자 import -->
     <!-- 스타일 css -->
     <link rel="stylesheet" href="/resources/css/pc.css">
-    <link rel="stylesheet" href="/resources/css/mobile.css">
-    <link rel="stylesheet" href="/resources/css/tablet.css">
+    <!-- jQuery -->
+	<script src="/resources/js/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <div class="wrap">

@@ -26,4 +26,19 @@
 			</tr>
 		</c:forEach>
 	</table>
+	<button id="btn_insert_form">게시물 추가</button>
 </section>
+
+<script>
+	$(document).ready(function(){
+		$("#btn_insert_form").click(function(){
+			$.ajax({
+				url:"",
+				type:"",
+				dataType:"",
+				success:function(result){},
+				error:function(){}
+			});
+		});
+	});
+</script>

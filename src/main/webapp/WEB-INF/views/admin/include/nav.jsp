@@ -5,7 +5,7 @@
             <ul>
             <c:forEach var="adminMenuVO" items="${adminMenuList}">
                 <li>
-                    <a href="/admin/${adminMenuVO.type}">
+                    <a href="/admin/${adminMenuVO.type}List">
                         ${adminMenuVO.name}
                     </a>
                 </li>
