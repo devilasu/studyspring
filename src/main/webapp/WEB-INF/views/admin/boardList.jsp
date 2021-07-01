@@ -18,7 +18,7 @@
 		<c:forEach var="boardVO" items="${boardList}">
 			<tr align="center">
 				<td>${boardVO.idx}</td>
-				<td>${boardVO.board_type}</td>
+				<td>${boardVO.type}</td>
 				<td>${boardVO.title}</td>
 				<td>${boardVO.content}</td>
 				<td>${boardVO.writer}</td>

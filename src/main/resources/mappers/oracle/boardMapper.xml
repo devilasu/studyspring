@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="boardMapper">
+	<sql id="boardWhere">
+		<if test="type != null and type != ''">
+			where type = #{type}
+		</if>
+	</sql>
 	<select id="selectBoard" resultType="com.home.vo.BoardVO">
 		select * from tbl_board
-		
+		<include refid="boardWhere" />
 	</select>
 
 </mapper>

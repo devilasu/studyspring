@@ -10,12 +10,12 @@ public class BoardVO {
 	private Integer viewcount;
 	private Date reg_date;
 	private Date update_date;
-	private String board_type;
+	private String type;
 	@Override
 	public String toString() {
 		return "BoardVO [idx=" + idx + ", title=" + title + ", content=" + content + ", writer=" + writer
 				+ ", viewcount=" + viewcount + ", reg_date=" + reg_date + ", update_date=" + update_date
-				+ ", board_type=" + board_type + "]";
+				+ ", type=" + type + "]";
 	}
 	public Integer getIdx() {
 		return idx;
@@ -59,11 +59,11 @@ public class BoardVO {
 	public void setUpdate_date(Date update_date) {
 		this.update_date = update_date;
 	}
-	public String getBoard_type() {
-		return board_type;
+	public String getType() {
+		return type;
 	}
-	public void setBoard_type(String board_type) {
-		this.board_type = board_type;
+	public void setType(String type) {
+		this.type = type;
 	}
 	
 }

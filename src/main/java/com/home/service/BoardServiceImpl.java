@@ -20,4 +20,10 @@ public class BoardServiceImpl implements BoardService{
 		return boardDAO.selectBoard();
 	}
 
+	@Override
+	public List<BoardVO> selectBoard(String type) throws Exception {
+		// TODO Auto-generated method stub
+		return boardDAO.selectBoard(type);
+	}
+
 }

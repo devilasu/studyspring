@@ -2,7 +2,7 @@ package com.home.vo;
 
 import java.util.Date;
 
-public class BoardAttach {
+public class BoardAttachVO {
 	private String save_file_name;
 	private String real_file_name;
 	private Date reg_date;
