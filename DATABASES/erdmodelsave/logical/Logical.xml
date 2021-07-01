@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="B9305BD7-8F56-B8AB-88C7-6819641DCDA6" mainViewID="EACBC5CD-D70D-8734-0570-50AF7372848E">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:10:53 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

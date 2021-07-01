@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9D5EBC04-BA93-E023-4D79-B80BCC88770B" schemaObject="3B03FEA1-7025-BEF5-4A3A-0CFF0D83343B" name="TBL_BOARD_TYPE">
+<sourceConnName>studydb</sourceConnName>
+<sourceObjSchema>STUDYDB</sourceObjSchema>
+<sourceObjName>TBL_BOARD_TYPE</sourceObjName>
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:04 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="TYPE" id="893BE24B-D3F7-0433-DA55-21AC29713A93">
+<sourceConnName>studydb</sourceConnName>
+<sourceObjSchema>TBL_BOARD_TYPE</sourceObjSchema>
+<sourceObjName>TYPE</sourceObjName>
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:05 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NAME" id="61A2D728-D54F-8491-8EE9-4E47867F6D4A">
+<sourceConnName>studydb</sourceConnName>
+<sourceObjSchema>TBL_BOARD_TYPE</sourceObjSchema>
+<sourceObjName>NAME</sourceObjName>
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:05 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ORDERS" id="822D434D-2AFD-E22E-5CC1-01020C6C0F79">
+<sourceConnName>studydb</sourceConnName>
+<sourceObjSchema>TBL_BOARD_TYPE</sourceObjSchema>
+<sourceObjName>ORDERS</sourceObjName>
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:05 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,11,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2E4AE232-691E-0EF3-D6BF-2E88D3C15A88" schemaObject="3B03FEA1-7025-BEF5-4A3A-0CFF0D83343B" name="TBL_BOARD_TYPE_PK">
+<sourceConnName>studydb</sourceConnName>
+<sourceObjSchema>STUDYDB</sourceObjSchema>
+<sourceObjName>SYS_C007602</sourceObjName>
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:05 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="893BE24B-D3F7-0433-DA55-21AC29713A93"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,109 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2844ABDF-D3D6-CDD2-40D3-05DD90598349" schemaObject="3B03FEA1-7025-BEF5-4A3A-0CFF0D83343B" name="TBL_HOME_MENU">
+<sourceConnName>studydb</sourceConnName>
+<sourceObjSchema>STUDYDB</sourceObjSchema>
+<sourceObjName>TBL_HOME_MENU</sourceObjName>
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:17:13 UTC</createdTime>
+<ownerDesignName>erdmodel</ownerDesignName>
+<importedID>875C1619-B61F-2023-8E69-DEC92C262E05</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="TYPE" id="AB0290D5-2D62-6EA0-DCC5-691D7025B9E8">
+<sourceConnName>studydb</sourceConnName>
+<sourceObjSchema>TBL_HOME_MENU</sourceObjSchema>
+<sourceObjName>TYPE</sourceObjName>
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:17:13 UTC</createdTime>
+<ownerDesignName>erdmodel</ownerDesignName>
+<importedID>2A606CDC-8D19-7870-3BAF-311E8E688602</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NAME" id="81E01557-003B-EB98-932B-78F2BBC765DB">
+<sourceConnName>studydb</sourceConnName>
+<sourceObjSchema>TBL_HOME_MENU</sourceObjSchema>
+<sourceObjName>NAME</sourceObjName>
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:17:13 UTC</createdTime>
+<ownerDesignName>erdmodel</ownerDesignName>
+<importedID>F81A546E-8E19-F4E6-6725-63BF9C84DD0A</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ORDERS" id="D870B130-3553-535E-A980-8E71F72EF832">
+<sourceConnName>studydb</sourceConnName>
+<sourceObjSchema>TBL_HOME_MENU</sourceObjSchema>
+<sourceObjName>ORDERS</sourceObjName>
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:17:13 UTC</createdTime>
+<ownerDesignName>erdmodel</ownerDesignName>
+<importedID>E36B7EF0-FA6E-88B6-A3BF-644DB55D842C</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,11,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PARENT" id="E53E9B01-17CF-DB87-E410-DA112C051BA2">
+<sourceConnName>studydb</sourceConnName>
+<sourceObjSchema>TBL_HOME_MENU</sourceObjSchema>
+<sourceObjName>PARENT</sourceObjName>
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:17:13 UTC</createdTime>
+<ownerDesignName>erdmodel</ownerDesignName>
+<importedID>ED17495F-F67B-03E6-C616-57181753F339</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="805DCE57-A47F-A07E-AA2D-F41B131824FF" referredColumn="AB0290D5-2D62-6EA0-DCC5-691D7025B9E8"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DD5D23C4-381E-53E5-8FDD-E4B899826D74" schemaObject="3B03FEA1-7025-BEF5-4A3A-0CFF0D83343B" name="TBL_HOME_MENU_PK">
+<sourceConnName>studydb</sourceConnName>
+<sourceObjSchema>STUDYDB</sourceObjSchema>
+<sourceObjName>SYS_C007594</sourceObjName>
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:17:13 UTC</createdTime>
+<ownerDesignName>erdmodel</ownerDesignName>
+<importedID>E43B4B4C-B83C-6C13-B13F-CF856CA27F32</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AB0290D5-2D62-6EA0-DCC5-691D7025B9E8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="112A1F57-75A7-055C-ECBD-74BF59FCC741" name="MPTYPE">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:17:13 UTC</createdTime>
+<ownerDesignName>erdmodel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E53E9B01-17CF-DB87-E410-DA112C051BA2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,44 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="TBL_BOARD_TYPE" directorySegmentName="seg_0" id="9D5EBC04-BA93-E023-4D79-B80BCC88770B">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:05 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+<schemaObject>3B03FEA1-7025-BEF5-4A3A-0CFF0D83343B</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>04C3AFF8-1550-2CA4-6369-0779479B544F</segment>
+<tableSpace>D854604B-AA5A-B050-ED9E-FE139B7A09F2</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="NAME" id="61A2D728-D54F-8491-8EE9-4E47867F6D4A">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:05 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ORDERS" id="822D434D-2AFD-E22E-5CC1-01020C6C0F79">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:05 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TYPE" id="893BE24B-D3F7-0433-DA55-21AC29713A93">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:05 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="TBL_BOARD_TYPE_PK" id="2E4AE232-691E-0EF3-D6BF-2E88D3C15A88">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:05 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+<schemaObject>3B03FEA1-7025-BEF5-4A3A-0CFF0D83343B</schemaObject>
+<segment>4D27C93C-D353-C001-74AB-B6CE669FED3A</segment>
+<tableSpace>D854604B-AA5A-B050-ED9E-FE139B7A09F2</tableSpace>
+<indexSegment>4D27C93C-D353-C001-74AB-B6CE669FED3A</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

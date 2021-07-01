@@ -1,0 +1,10 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<UserOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UserOraclev10g" name="STUDYDB" directorySegmentName="seg_0" id="8E25CC19-CE06-33DA-C4AB-659D2F8D2F3A">
+<sourceConnName>studydb</sourceConnName>
+<sourceObjName>STUDYDB</sourceObjName>
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:04 UTC</createdTime>
+<ownerDesignName>제목 없음_1</ownerDesignName>
+<schemaObject>3B03FEA1-7025-BEF5-4A3A-0CFF0D83343B</schemaObject>
+<privileges>CREATE PROCEDURE, CREATE VIEW, CREATE JOB, CREATE DIMENSION, CREATE ANY CONTEXT, CREATE TYPE, CREATE SEQUENCE, CREATE TRIGGER, CREATE TABLE, CREATE CLUSTER, CREATE OPERATOR, CREATE SESSION, CREATE MATERIALIZED VIEW, CREATE INDEXTYPE, CREATE SYNONYM</privileges>
+</UserOraclev10g>

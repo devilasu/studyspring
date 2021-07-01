@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BusinessInfoDesign class="oracle.dbtools.crest.model.businessinfo.BusinessInfoDesign" name="Business Information" id="DFA741B5-7296-2242-42F9-1A8CF435FB82">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:10:54 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</BusinessInfoDesign>

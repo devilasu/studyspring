@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="FB7DE8C0-A18F-0908-48E7-B15712A14341" containerWithKeyObject="79036A68-94DD-37C6-C95E-043DF4E44324" localFKIndex="0308359F-E9DA-5FED-E00F-201B02976DFA" name="BOARD_INDEX_FK">
+<sourceConnName>studydb</sourceConnName>
+<sourceObjSchema>STUDYDB</sourceObjSchema>
+<sourceObjName>BOARD_INDEX_FK</sourceObjName>
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:59 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+<importedID>D4F683EC-EAA6-3F05-0F85-E23CABF59E8A</importedID>
+<referredTableLongName>STUDYDB.TBL_BOARD</referredTableLongName>
+<deleteRule>CASCADE</deleteRule>
+<referredTableID>046509B2-080E-C110-6F3E-3D33517A3A4B</referredTableID>
+<keyObject>C9A81CD1-EAAA-144C-BA73-FA037CFF3A0D</keyObject>
+<referredKeyID>C9A81CD1-EAAA-144C-BA73-FA037CFF3A0D</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>IDX</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

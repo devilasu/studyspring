@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="erdmodel" id="2745B320-EE3A-1C46-0AF4-4BFAF7CF2CBA" version="3.5">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:10:53 UTC</createdTime>
+<ownerDesignName>erdmodel</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>2745B320-EE3A-1C46-0AF4-4BFAF7CF2CBA</designId>
+<usedDesignStorageDescriptors>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="5E160C96-FCBF-0622-2024-F2192663167D">
+<designStoragePath>D:\</designStoragePath>
+</designDescr>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="D69C8EF4-8113-149D-AC2B-9BB042EA628D">
+<designStoragePath>D:\</designStoragePath>
+</designDescr>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="3AEC187E-9B2A-EB36-7D2A-2E28A86B1525">
+<designStoragePath>D:\</designStoragePath>
+</designDescr>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="C5AFE408-8DAD-0E21-A196-A21B67DD1337">
+<designStoragePath>D:\</designStoragePath>
+</designDescr>
+</usedDesignStorageDescriptors>
+</OSDM_Design>

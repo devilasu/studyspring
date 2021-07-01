@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="TBL_BOARD" directorySegmentName="seg_0" id="046509B2-080E-C110-6F3E-3D33517A3A4B">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:59 UTC</createdTime>
+<ownerDesignName>제목 없음_1</ownerDesignName>
+<schemaObject>3B03FEA1-7025-BEF5-4A3A-0CFF0D83343B</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>04C3AFF8-1550-2CA4-6369-0779479B544F</segment>
+<tableSpace>D854604B-AA5A-B050-ED9E-FE139B7A09F2</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="IDX" id="0F6BC0E6-0CDE-9BD9-9137-805AFA569FB1">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:59 UTC</createdTime>
+<ownerDesignName>제목 없음_1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CONTENT" id="3170347D-1182-1D15-28F8-EECFF02F6C59">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:59 UTC</createdTime>
+<ownerDesignName>제목 없음_1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TYPE" id="502180BD-06FD-CE60-8D43-401B862DFFEB">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:59 UTC</createdTime>
+<ownerDesignName>제목 없음_1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TITLE" id="5BC7574E-1E86-A856-DC27-5FCAC07E65A2">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:59 UTC</createdTime>
+<ownerDesignName>제목 없음_1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="WRITER" id="C9EE7355-FF15-1841-DD0B-4BCF42AB471C">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:59 UTC</createdTime>
+<ownerDesignName>제목 없음_1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="VIEWCOUNT" id="D383BD3E-C6AB-6441-EB6D-E9A8E5C1E5DA">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:59 UTC</createdTime>
+<ownerDesignName>제목 없음_1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="UPDATE_DATE" id="F3D11DCB-64DF-67D7-CBFD-B088494FCD58">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:59 UTC</createdTime>
+<ownerDesignName>제목 없음_1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="REG_DATE" id="FBEB80CB-68CC-7B7E-E59E-9727623AD7B3">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:59 UTC</createdTime>
+<ownerDesignName>제목 없음_1</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="BOARD_TYPE_FK" id="E28F8307-EB43-5C6C-2C8D-B7FEDF61E4B7">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:59 UTC</createdTime>
+<ownerDesignName>제목 없음_1</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="TBL_BOARD_PK" id="C9A81CD1-EAAA-144C-BA73-FA037CFF3A0D">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:59 UTC</createdTime>
+<ownerDesignName>제목 없음_1</ownerDesignName>
+<schemaObject>3B03FEA1-7025-BEF5-4A3A-0CFF0D83343B</schemaObject>
+<segment>4D27C93C-D353-C001-74AB-B6CE669FED3A</segment>
+<tableSpace>D854604B-AA5A-B050-ED9E-FE139B7A09F2</tableSpace>
+<indexSegment>4D27C93C-D353-C001-74AB-B6CE669FED3A</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

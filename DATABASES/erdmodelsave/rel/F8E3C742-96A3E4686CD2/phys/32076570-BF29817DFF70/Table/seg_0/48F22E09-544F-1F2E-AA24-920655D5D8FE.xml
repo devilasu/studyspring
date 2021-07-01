@@ -1,0 +1,56 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="TBL_ADMIN_MENU" directorySegmentName="seg_0" id="48F22E09-544F-1F2E-AA24-920655D5D8FE">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:17:13 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+<schemaObject>3B03FEA1-7025-BEF5-4A3A-0CFF0D83343B</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>04C3AFF8-1550-2CA4-6369-0779479B544F</segment>
+<tableSpace>D854604B-AA5A-B050-ED9E-FE139B7A09F2</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="TYPE" id="22388AC1-1CF1-9EE0-B9DB-71A84E2F973C">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:17:13 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PARENT" id="72C8BB50-58F1-22F0-0621-AA05328BFB3C">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:17:13 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NAME" id="87A32FD0-701F-3C11-143B-430BFE69B4DD">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:17:13 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ORDERS" id="D79B878C-7361-D6FF-C705-13905B0612B4">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:17:13 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="ADMINMENUSELFFOREIGN" id="5A565B6F-BF73-0EAB-D14C-7F7F5861DE85">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:17:13 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="TBL_ADMIN_MENU_PK" id="BAAB3ABD-DD8F-C002-A4D7-3AAFE96362F5">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:17:13 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+<schemaObject>3B03FEA1-7025-BEF5-4A3A-0CFF0D83343B</schemaObject>
+<segment>4D27C93C-D353-C001-74AB-B6CE669FED3A</segment>
+<tableSpace>D854604B-AA5A-B050-ED9E-FE139B7A09F2</tableSpace>
+<indexSegment>4D27C93C-D353-C001-74AB-B6CE669FED3A</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

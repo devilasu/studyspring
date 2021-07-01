@@ -1,0 +1,66 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="TBL_BOARD_REPLY" directorySegmentName="seg_0" id="7DA3F6A7-C96C-0D92-7042-1F0642FEBCDF">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:59 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+<schemaObject>3B03FEA1-7025-BEF5-4A3A-0CFF0D83343B</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>04C3AFF8-1550-2CA4-6369-0779479B544F</segment>
+<tableSpace>D854604B-AA5A-B050-ED9E-FE139B7A09F2</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="CONTENT" id="02DAD338-70EB-DBDE-01D8-738EC6E2F9E6">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:59 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="BOARD_IDX" id="2AF7446E-DCB0-BE8F-DD8D-0B9F2908DE67">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:59 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="WRITER" id="63685113-95BF-E810-B1E4-07F60BC1C926">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:59 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="REG_DATE" id="BC2657C1-5FB6-B663-E73B-F47DB4459086">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:59 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="UPDATE_DATE" id="C058C047-5364-3099-01DE-3546939069FC">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:59 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="IDX" id="ECED0B99-431B-76AC-8540-57409331EFF6">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:59 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="BOARD_INDEX_REPLY_FK" id="186D480E-ABEC-9958-125E-38F6D5494F08">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:59 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="TBL_BOARD_REPLY_PK" id="3A3249F3-D320-1FF9-797A-B8E41F198A32">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:59 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+<schemaObject>3B03FEA1-7025-BEF5-4A3A-0CFF0D83343B</schemaObject>
+<segment>4D27C93C-D353-C001-74AB-B6CE669FED3A</segment>
+<tableSpace>D854604B-AA5A-B050-ED9E-FE139B7A09F2</tableSpace>
+<indexSegment>4D27C93C-D353-C001-74AB-B6CE669FED3A</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

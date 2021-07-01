@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="5AE9D85E-C219-6A16-9632-51E6EB0425A0" containerWithKeyObject="48F22E09-544F-1F2E-AA24-920655D5D8FE" localFKIndex="5A565B6F-BF73-0EAB-D14C-7F7F5861DE85" name="ADMINMENUSELFFOREIGN">
+<sourceConnName>studydb</sourceConnName>
+<sourceObjSchema>STUDYDB</sourceObjSchema>
+<sourceObjName>ADMINMENUSELFFOREIGN</sourceObjName>
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:17:13 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+<importedID>CC22A126-C3A3-628E-3F55-C1655296C45D</importedID>
+<referredTableLongName>STUDYDB.TBL_ADMIN_MENU</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>48F22E09-544F-1F2E-AA24-920655D5D8FE</referredTableID>
+<keyObject>BAAB3ABD-DD8F-C002-A4D7-3AAFE96362F5</keyObject>
+<referredKeyID>BAAB3ABD-DD8F-C002-A4D7-3AAFE96362F5</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>TYPE</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

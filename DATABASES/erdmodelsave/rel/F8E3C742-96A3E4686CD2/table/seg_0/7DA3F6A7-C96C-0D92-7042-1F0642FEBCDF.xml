@@ -1,0 +1,142 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7DA3F6A7-C96C-0D92-7042-1F0642FEBCDF" schemaObject="3B03FEA1-7025-BEF5-4A3A-0CFF0D83343B" name="TBL_BOARD_REPLY">
+<sourceConnName>studydb</sourceConnName>
+<sourceObjSchema>STUDYDB</sourceObjSchema>
+<sourceObjName>TBL_BOARD_REPLY</sourceObjName>
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:59 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+<importedID>EC1C1DF9-0C30-3DDA-5F9A-43D02709B4F6</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDX" id="ECED0B99-431B-76AC-8540-57409331EFF6">
+<sourceConnName>studydb</sourceConnName>
+<sourceObjSchema>TBL_BOARD_REPLY</sourceObjSchema>
+<sourceObjName>IDX</sourceObjName>
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:59 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+<importedID>83652469-01C3-E69B-F44C-463F660D16D5</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>22</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,22,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CONTENT" id="02DAD338-70EB-DBDE-01D8-738EC6E2F9E6">
+<sourceConnName>studydb</sourceConnName>
+<sourceObjSchema>TBL_BOARD_REPLY</sourceObjSchema>
+<sourceObjName>CONTENT</sourceObjName>
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:59 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+<importedID>42128D7C-87A5-16C5-EBBE-5B61FEFFE65A</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="WRITER" id="63685113-95BF-E810-B1E4-07F60BC1C926">
+<sourceConnName>studydb</sourceConnName>
+<sourceObjSchema>TBL_BOARD_REPLY</sourceObjSchema>
+<sourceObjName>WRITER</sourceObjName>
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:59 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+<importedID>B1877081-6DFC-7812-6389-7FA553D26CBA</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REG_DATE" id="BC2657C1-5FB6-B663-E73B-F47DB4459086">
+<sourceConnName>studydb</sourceConnName>
+<sourceObjSchema>TBL_BOARD_REPLY</sourceObjSchema>
+<sourceObjName>REG_DATE</sourceObjName>
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:59 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+<importedID>62CEB6CD-DF7C-A40F-DDA6-D8F5C1246578</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UPDATE_DATE" id="C058C047-5364-3099-01DE-3546939069FC">
+<sourceConnName>studydb</sourceConnName>
+<sourceObjSchema>TBL_BOARD_REPLY</sourceObjSchema>
+<sourceObjName>UPDATE_DATE</sourceObjName>
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:59 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+<importedID>0A74D424-1AA6-61C1-F732-43ECECCB96D6</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BOARD_IDX" id="2AF7446E-DCB0-BE8F-DD8D-0B9F2908DE67">
+<sourceConnName>studydb</sourceConnName>
+<sourceObjSchema>TBL_BOARD_REPLY</sourceObjSchema>
+<sourceObjName>BOARD_IDX</sourceObjName>
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:59 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+<importedID>8E4E6864-612B-70F3-27D2-B7F78EC9B9C1</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>22</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,22,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AAD59E89-5065-D892-8B7A-91C25396068A" referredColumn="0F6BC0E6-0CDE-9BD9-9137-805AFA569FB1"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3A3249F3-D320-1FF9-797A-B8E41F198A32" schemaObject="3B03FEA1-7025-BEF5-4A3A-0CFF0D83343B" name="TBL_BOARD_REPLY_PK">
+<sourceConnName>studydb</sourceConnName>
+<sourceObjSchema>STUDYDB</sourceObjSchema>
+<sourceObjName>SYS_C007607</sourceObjName>
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:59 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+<importedID>B1A2EBDB-B7A4-2393-5BDF-2E45A0590D4C</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="ECED0B99-431B-76AC-8540-57409331EFF6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="186D480E-ABEC-9958-125E-38F6D5494F08" name="BOARD_INDEX_REPLY_FK">
+<createdBy>devil</createdBy>
+<createdTime>2021-07-01 22:11:59 UTC</createdTime>
+<ownerDesignName>erdmodelsave</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2AF7446E-DCB0-BE8F-DD8D-0B9F2908DE67"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
