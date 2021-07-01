@@ -26,13 +26,15 @@
 - 정 안된다면 데이터를 넘기고 ajax에서 html로 구현하는 방식을 사용.
 
 - 현재 막힌 부분은 공부가 필요한 부분이므로, 넘기는 부분을 제외하고 서버에서 검색과 페이지 기능을 구현하기 위한 기본 준비 시작.
-- ing
 - 검색을 위한 boardMapper부분 수정, 
 - 검색은 selectBoard를 오버로딩하여 생성.
+- 검색기능구현중 Mapper의 if에서 변수처리 문제 발생. dao에서 map로 전달도 가능하나, pageVO, searchVO를 구현하여 함께 처리.
+- pageVO, searchVO 생성. search시에는 항상 pageVO가 있으므로 searchVO안에pageVO 변수 생성.
+- 페이지 계산부분 구현중.
 - db sql 파일 복구.
 - db erd 복구.
-- 검색 구현중.
-
+- pageVO의 계산식 구현(확인 필요.)
+- 데이터간 이동에서 문제 발생.
 
 
 

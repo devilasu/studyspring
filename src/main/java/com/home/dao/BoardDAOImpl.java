@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.home.vo.BoardVO;
+import com.home.vo.SearchVO;
 
 @Repository
 public class BoardDAOImpl implements BoardDAO{
@@ -19,8 +20,8 @@ public class BoardDAOImpl implements BoardDAO{
 		return sqlSession.selectList("boardMapper.selectBoard");
 	}
 	@Override
-	public List<BoardVO> selectBoard(String type) throws Exception {
+	public List<BoardVO> selectBoard(SearchVO searchVO) throws Exception {
 		// TODO Auto-generated method stub
-		return sqlSession.selectList("boardMapper.selectBoard", type);
+		return sqlSession.selectList("boardMapper.selectBoard", searchVO);
 	}
 }

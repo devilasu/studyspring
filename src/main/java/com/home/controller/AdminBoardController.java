@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.home.service.BoardService;
+import com.home.vo.SearchVO;
 
 /**
  * 관리자단의 게시판관리의 부분업데이트 처리.
@@ -28,7 +29,9 @@ public class AdminBoardController {
 	@RequestMapping(value = "/admin/boards/{type}", method = RequestMethod.GET)
 	public ResponseEntity<Map<String,Object>> boardLists(@PathVariable String type) throws Throwable{
 		Map<String,Object> result = new HashMap<String, Object>();
-		result.put("boardList",boardService.selectBoard(type));
+		SearchVO searchVO = new SearchVO();
+		searchVO.setType(type);
+		result.put("boardList",boardService.selectBoard(searchVO));
 		return ResponseEntity.ok(result);
 	}
 }
