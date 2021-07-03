@@ -23,7 +23,12 @@
 - 현재 에러부분 해결
 - ajax통신에서 리턴값을 jsp로 할 수 있는것 같은데 Controller에서 처리하는 방법은?(해결되면 화면처리가 해결된다. ajax는 html안에 값을 넣는 것으로 처리)
 - 기존 컨트롤러처럼 jsp 값을 리턴해보자.
-- 
+- @Controller+@ResponseController = @RestController 이므로 굳이 RestController를 사용할 필요가 없다.
+- - ajax를 사용하면 뷰도 ajax에 데이터값으로 전송된다.
+- 위 부분이 확인되어 정상작동하면 화면처리 부분은 모두 해결.
+- 코드 복습하며 주석처리.
+- boards CUD 작업.
+
 
 #### 20210702 (금) 작업
 - boards에 CUD와 연결되는 버튼을 만들고 ajax로 갱신해보자
