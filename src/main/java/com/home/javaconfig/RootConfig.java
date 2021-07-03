@@ -7,6 +7,12 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
+/**
+ * Root-Context를 대신하는 클래스
+ * @author 김영제
+ *
+ */
+
 @Configuration
 @Import({DataSourceConfig.class,SqlMapperConfig.class})
 @ComponentScan(basePackages={"com.home.dao"},includeFilters=@ComponentScan.Filter(value= {Repository.class}),useDefaultFilters=false)
