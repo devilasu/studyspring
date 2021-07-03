@@ -5,6 +5,11 @@ import javax.servlet.Filter;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+/**
+ * web.xml을 대신하는 파일.
+ * @author 김영제
+ *
+ */
 public class WebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
 	// Root WebApplicationContext
@@ -25,7 +30,7 @@ public class WebInitializer extends AbstractAnnotationConfigDispatcherServletIni
 		return new String[] { "/" };
 	}
 
-	// filter
+	// 한글을 가능하게 해주는 filter
 	@Override
     protected Filter[] getServletFilters() {
         CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
