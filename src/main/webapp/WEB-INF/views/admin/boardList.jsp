@@ -3,7 +3,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <section class="section">
 	<table>
-		게시판 목록
 		<thead>
 			<tr align="center">
 				<td>게시판 번호</td>
