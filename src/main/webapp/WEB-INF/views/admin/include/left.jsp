@@ -21,10 +21,11 @@
 				type:"GET",
 				datatype:"html",
 				success:function(result){
-					alert("성공");
+					$("section").html(result);
+					
 				},
 				error:function(){
-					alert("실패");
+					alert("서버 전송에 실패했습니다.");
 				}
 				
 			});
