@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.home.service.HomeMenuService;
 /**
- * admin 페이지 관리 컨트롤러
+ * 관리자 페이지 관리 컨트롤러
  * @author 김영제
  *
  */
@@ -30,7 +30,7 @@ public class AdminController {
 		model.addAttribute("leftMenuList", homeMenuService.selectMenu(null));	//left에 전달하는 메뉴목록.
 		return "on.admin.menuList";
 	}
-	
+	//관리자 메인페이지 요청시 호출
 	@RequestMapping(value = "/admin", method = RequestMethod.GET)
 	public String adminMainPage() throws Exception{
 		logger.info("어드민 컨트롤러 호출");

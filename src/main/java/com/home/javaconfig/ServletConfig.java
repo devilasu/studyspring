@@ -14,12 +14,17 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 import org.springframework.web.servlet.view.tiles3.TilesView;
 
+/**
+ * ServletContext 대신하는 클래스
+ * @author 김영제
+ *
+ */
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages={"com.home.controller"},includeFilters=@ComponentScan.Filter(value= {Controller.class}),useDefaultFilters=false)
 @EnableAspectJAutoProxy(proxyTargetClass = true)
 public class ServletConfig implements WebMvcConfigurer {
-
+	//resource위치 설정
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
