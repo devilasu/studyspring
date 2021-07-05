@@ -1,12 +1,19 @@
 #### 20210705 (월) 작업
 - ajax를 이용한 admin boards 부분 갱신 해결.
 - 생성 부분에서 정지.
+- -------------------
 - 페이징, 서칭 먼저 구현 시작.
-- boards CUD 작업.
+- jsp에서 page, keyword, searchType를 보내주면? Controller에서 처리 후, 넘겨준다.? 굳이 jsp에 날려줄 이유가 없다.
+- AOP를 이용하여 AdminBoardController 내의 함수 끝부분이 List인 것은 전부 SearchVO를 날려준다...?
 
 - 페이징과 서칭관련하여 SearchVO를 보드 관련해서 항상 넘겨줘야 하는가?AOP이용:컨트롤러이용.
 - 현재 구조로는 jsp에서 type을 얻어낼 방법이 없다.서칭하고 돌려주면 그대로 데이터가 날아가기 때문.
 - 매번 리스트에서 SearchVO를 불러 오는 것이 바람직한가? (고민)
+
+- - AdminBoardController의 두 함수를 합치는 작업.  type에 insertForm값이 들어오는 불상사 발생. 
+- boards CUD 작업.
+- insertForm을 호출하는 부분 작성. admin/boards/{type}/insert_form (get)
+- 동작: type에 따라서 게시판추가의 type default 값이 달라지도록 만든다.
 
 
 #### 계획표.
@@ -41,6 +48,7 @@
 - 페이지를 미리 작성해봄으로서 공통 변수를 확인할 수 있고 가능하다면 이름을 동일하게 주어서 작업량을 줄일 수 있다.
 - 확실한 구분을 위해서는 그냥 공용페이지 하나를 더 제작하는 것도 나쁘지 않다. (현 작업의 left는 같은 변수명을 사용하는 것으로 left.jsp 하나로 처리하고 있다.)
 - 위 작업은 후에 문제가 생길여지가 다분하니 차라리 분화해서 각자 작업하는 것도 나쁘지 않을 것 같다. (tiles의 구조를 좀 더 세분화, 구체화 할 필요가 있다.)
+- DAO, Service 에서의 변수명 설정 시, DAO는 Mapper과 그대로 쓰되, 오버로딩보다 인자가 없는 함수는 selectALLList가 더 직관적일 듯 하다. 이는 Service도 마찮가지.
 
 #### 20210703 (토) 작업
 - 현재 에러부분 해결
