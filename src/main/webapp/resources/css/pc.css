@@ -46,4 +46,9 @@ nav ul{
     text-align: right;
 }
 nav ul li{
-    display:inline-block;}
+    display:inline-block;
+}
+
+.hlb{
+	float: right;
+}

@@ -20,9 +20,14 @@ public class BoardServiceImpl implements BoardService{
 		// TODO Auto-generated method stub
 		return boardDAO.selectBoard();
 	}
+	
+	public List<BoardVO> selectBoard(String type) throws Exception {
+		// TODO Auto-generated method stub
+		return boardDAO.selectBoard(type);
+	}
 
 	@Override
-	public List<BoardVO> selectBoard(SearchVO searchVO) throws Exception {
+	public List<BoardVO> searchBoard(SearchVO searchVO) throws Exception {
 		// TODO Auto-generated method stub
 		return boardDAO.selectBoard(searchVO);
 	}

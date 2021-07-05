@@ -2,12 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="adminMenuMapper">
 
-<delete id="deleteMenu">
+<delete id="delete">
 	delete from tbl_admin_menu
 	where
 	menu_type = #{type}
 </delete>
-<insert id="insertMenu">
+
+<insert id="insert">
 	insert into tbl_admin_menu values(
 	#{type},
 	#{name},
@@ -16,7 +17,7 @@
 	)
 </insert>
 
-<update id="updateMenu">
+<update id="update">
 	update tbl_admin_menu
 	set
 	menu_name=#{name},
@@ -24,12 +25,19 @@
 	menu_order = #{orders}
 </update>
 
-<select id="readMenu" resultType="com.home.vo.MenuVO">
+<!-- 모든 메뉴 검색(실제로 안쓰일 것 같다. -->
+<select id="selectAll"  resultType="com.home.vo.MenuVO">
+	select * from tbl_admin_menu
+</select>
+
+<!-- type을 통해 한개의 메뉴 검색하는  기능.-->
+<select id="read" resultType="com.home.vo.MenuVO">
 	select * from tbl_admin_menu
 	where type=#{type}
 </select>
 
-<select id="selectMenu" resultType="com.home.vo.MenuVO">
+<!-- parent값을 이용해 하위 메뉴 검색기능 -->
+<select id="selectParent"  resultType="com.home.vo.MenuVO">
 	<choose>
 		<when test="#{menu_parent==null}">
 			select * from tbl_admin_menu
@@ -40,6 +48,13 @@
 			where parent=#{type}
 		</otherwise>
 	</choose>
+</select>
+
+
+<!-- searchVO를 통한 검색 (페이징, 서칭 연관)-->
+<select id="selectSearchVO" resultType="com.home.vo.MenuVO">
+	select * from tbl_admin_menu
+	
 </select>
 
 </mapper>

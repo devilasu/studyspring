@@ -22,11 +22,12 @@ public class TestJava {
 	
 	@Test
 	public void testDAO() throws Exception{
+		//logger.info();
 	}
 	
 	@Test
 	public void testQuery() throws Exception{
-		logger.info(sqlSession.selectList("topMenuMapper.selectTopMenu").toString());
+		logger.info(sqlSession.selectList("adminMenuMapper.selectType",null).toString());
 	}
 	
 	@Test

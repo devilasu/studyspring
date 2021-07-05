@@ -21,9 +21,9 @@ public class AdminAdvice {
 	
 	@Inject
 	private AdminService adminService;
-	
+
 	@Around("execution(* com.home.controller.AdminController.*(..))")
-	public Object AdminMenu(ProceedingJoinPoint pjp) throws Throwable{
+	public Object adminMenu(ProceedingJoinPoint pjp) throws Throwable{
 		logger.info("어드민 어드바이스 호출");
 		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
 		request.setAttribute("adminMenuList", adminService.selectMenu(null));
