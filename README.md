@@ -9,8 +9,10 @@
 - 페이징과 서칭관련하여 SearchVO를 보드 관련해서 항상 넘겨줘야 하는가?AOP이용:컨트롤러이용.
 - 현재 구조로는 jsp에서 type을 얻어낼 방법이 없다.서칭하고 돌려주면 그대로 데이터가 날아가기 때문.
 - 매번 리스트에서 SearchVO를 불러 오는 것이 바람직한가? (고민)
+- jsp에서 type, page, keyword, searchType를 넘겨주고 Controller에서는 결과값을넘겨주는 것... ListController들은 최로를 제외하고 searchVO를 넘겨주게 된다.
+- 때문에 
 
-- - AdminBoardController의 두 함수를 합치는 작업.  type에 insertForm값이 들어오는 불상사 발생. 
+- AdminBoardController의 두 함수를 합치는 작업.  type에 insertForm값이 들어오는 불상사 발생. 
 - boards CUD 작업.
 - insertForm을 호출하는 부분 작성. admin/boards/{type}/insert_form (get)
 - 동작: type에 따라서 게시판추가의 type default 값이 달라지도록 만든다.
