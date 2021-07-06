@@ -33,7 +33,16 @@
 		<button value="${searchVO.pageVO.endPageNum+1}" id="btn_paging_next" ${(searchVO.pageVO.next)?'':'disabled'}>next</button>
 	</div>
 	<br>
-	<button id="btn_insert_form">게시물 추가</button>
+	<select id="searchType" >
+		<option value="all" selected="selected">전체</option>
+		<option value="title" >제목</option>
+		<option value="content" >내용</option>
+	</select>
+	<input type="text" id="searchKeyword">
+	<button id="btn_search">검색</button>
+	
+	<!-- <button id="btn_insert_form">게시물 추가</button> -->
+	
 </section>
 
 <script>
@@ -67,6 +76,19 @@
 					$("section").parent().html(result);
 					},
 				error:function(){alert("서버 전송에 실패했습니다.");}
+			});
+		});
+		$("#btn_search").click(function(){
+			var keyword = java.net.URLEncoder.encode($("#searchKeyword").val(),"utf-8");
+			$.ajax({
+				url:"/admin/boards/${searchVO.type}?page=${searchVO.pageVO.page}&searchKeyword="+keyword+"&searchType="+$("#searchType option:selected").val(),
+				type:"GET",
+				dataType:"",
+				success:function(result){ 
+					alert(keyword);
+					$("section").parent().html(result);
+					},
+				error:function(){}
 			});
 		});
 	});

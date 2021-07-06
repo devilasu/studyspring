@@ -1,32 +1,20 @@
 #### 20210707 (수) 작업예정
+- 서칭 keyword 값의 한글 인코딩 문제 해결.
 - boards CUD 작업.
-- RestAPI에 맞는 Controller구조 기획, 페이징과 서칭을 위해 JSP에 form 추가
-- (restAPI에 대한 고민)
+- RestAPI에 맞는 Controller구조 기획
+- 현재: boards/{type}/{idx}/replies/attaches 방식으로 만들 계획(문서 작성)
+
+
+- (restAPI에 대한 고민)(완료)
 - restAPI로 구현하는 경우 중간 null값 입력이 안된다. boards/list/{type} 과 boards/list/{type}/{page}/... 등등을 함수 하나로 연동이 가능할까? 각 값들이 0 혹은 -1일경우 없는 수로 처리하기에도 애매하다...
 - 어떻게 해결해야 하는가? 각 데이터에 대한 임시null값 지정하는 것은 에러발생의 소지가 많아 문제가 된다.
 - 그렇다고 각각 상황에 따라 모든 매핑함수를 만드는 것은 비슷한 역할의 코드가 너무 많아져 생산성이 떨어진다.
 - 내가 만든 구조가 잘못되었는가?(고민해볼 여지가 있다. RestAPI에 최적화된 구조가 있을 것이다.)
 - 위에서는 list까지만 구현하고, 실제 값들은 json으로 전달하면 문제가 해결되지 않을까?
-- jsp에서 type, page, keyword, searchType를 넘겨주고 Controller에서는 결과값을넘겨주는 것... 이전페이지는 javascript(history)로 처리가 가능한가? 처리할 경우(ajax를 이용한 검색 값도 남는지 확인이 필요.)
+- 해결: RestAPI에 대한 오해로 인한 구조의 문제. RestAPI는 경로에 대한 것이며, 정렬, 검색, 필터링은 쿼리스트링을 사용하면 된다.
+- 두 가지를 적절히 사용하여야 할 것을 하나로만 하려고 해서 생긴 문제.
+- jsp에서 type, page, keyword, searchType를 넘겨주고 Controller에서는 결과값을넘겨주는 것... 이전페이지는 javascript(history)로 처리가 가능한가? 처리할 경우(ajax를 이용한 검색 값도 남는지 확인이 필요.)(완료)
 
-#### 20210706 (화) 작업
-- 생성 부분에서 정지.
-- Mapper, DAO, Service 쿼리 및 함수 이름 통일 및 수정 작업.
-- list로 끝나는 함수에 AOP를 이용하여 left_menu 값을 항상 전달한다.
-- 페이징, 서칭 Controller 제작중 문제 발생.
-
-- 계산식 문제 없음 확인.
-- 각 jsp내부에 있는 값 확인.
-
-- AdminBoardController의 두 함수를 합치는 작업.  type에 insertForm값이 들어오는 불상사 발생. (해결)
-- insertForm을 호출하는 부분 작성. admin/boards/{type}/insert_form (get)
-- 동작: type에 따라서 게시판추가의 type default 값이 달라지도록 만든다.
-- 해결: admin/boards/list(insert, update 등)/{type}/.../..
-
-- 페이징을 ajax로 처리하는 과정에서 2번의 클릭 이후 변환이 안되는 문제 발생.
-- 문제 원인 예상: jsp를 컴파일하는 과정에서 버튼을 인식못할 가능성이 있다고 예상.(가정)
-- 문제 원인 발견: jquery로 노드를 검색하여 추가하는 과정에서 section이 중복되면서 경로가 꼬인 것이 원인.
-- 해결방법: div를 이용하여 상위 노드를 제작하고, parent()를 이용하여 갱신한다.(레이아웃이 깨지는 문제가 발생한다.)
 
 
 #### 계획표.
@@ -63,7 +51,30 @@
 - 위 작업은 후에 문제가 생길여지가 다분하니 차라리 분화해서 각자 작업하는 것도 나쁘지 않을 것 같다. (tiles의 구조를 좀 더 세분화, 구체화 할 필요가 있다.)
 - DAO, Service 에서의 변수명 설정 시, DAO는 Mapper과 그대로 쓰되, 오버로딩보다 인자가 없는 함수는 selectALLList가 더 직관적일 듯 하다. 이는 Service도 마찮가지.
 
+#### 20210706 (화) 작업
+- 생성 부분에서 정지.
+- 서칭 구현 시작.
+
+
+- 페이징, 서칭 Controller 제작중 문제 발생.
+
+- 계산식 문제 없음 확인.
+- 각 jsp내부에 있는 값 확인.
+
+- AdminBoardController의 두 함수를 합치는 작업.  type에 insertForm값이 들어오는 불상사 발생. (해결)
+- insertForm을 호출하는 부분 작성. admin/boards/{type}/insert_form (get)
+- 동작: type에 따라서 게시판추가의 type default 값이 달라지도록 만든다.
+- 해결: admin/boards/list(insert, update 등)/{type}/.../..
+
+- 페이징을 ajax로 처리하는 과정에서 2번의 클릭 이후 변환이 안되는 문제 발생.
+- 문제 원인 예상: jsp를 컴파일하는 과정에서 버튼을 인식못할 가능성이 있다고 예상.(가정)
+- 문제 원인 발견: jquery로 노드를 검색하여 추가하는 과정에서 section이 중복되면서 경로가 꼬인 것이 원인.
+- 해결방법: div를 이용하여 상위 노드를 제작하고, parent()를 이용하여 갱신한다.(레이아웃이 깨지는 문제가 발생한다.)
+
+
 #### 20210705 (월) 작업
+- Mapper, DAO, Service 쿼리 및 함수 이름 통일 및 수정 작업.
+- list로 끝나는 함수에 AOP를 이용하여 left_menu 값을 항상 전달한다.
 - ajax를 이용한 admin boards 부분 갱신 해결.
 
 

@@ -21,7 +21,7 @@
 				type:"GET",
 				datatype:"html",
 				success:function(result){
-					$("section").html(result);
+					$("section").parent().html(result);
 					
 				},
 				error:function(){
