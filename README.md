@@ -2,7 +2,7 @@
 - 생성 부분에서 정지.
 - Mapper, DAO, Service 쿼리 및 함수 이름 통일 및 수정 작업.
 - 페이징, 서칭 구현 시작.
-- 
+- list로 끝나는 함수에 AOP를 이용하여 left_menu 값을 항상 전달한다.
 
 - (restAPI에 대한 고민)
 - restAPI로 구현하는 경우 중간 null값 입력이 안된다. boards/list/{type} 과 boards/list/{type}/{page}/... 등등을 함수 하나로 연동이 가능할까? 각 값들이 0 혹은 -1일경우 없는 수로 처리하기에도 애매하다...

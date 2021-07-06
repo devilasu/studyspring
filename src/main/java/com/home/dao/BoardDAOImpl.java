@@ -17,18 +17,24 @@ public class BoardDAOImpl implements BoardDAO{
 	@Override
 	public List<BoardVO> selectBoard() throws Exception {
 		// TODO Auto-generated method stub
-		return sqlSession.selectList("boardMapper.selectBoard");
+		return sqlSession.selectList("boardMapper.selectAll");
 	}
 	
 	@Override
 	public List<BoardVO> selectBoard(String type) throws Exception {
 		// TODO Auto-generated method stub
-		return sqlSession.selectList("boardMapper.selectBoard", type);
+		return sqlSession.selectList("boardMapper.selectType", type);
 	}
 	
 	@Override
 	public List<BoardVO> selectBoard(SearchVO searchVO) throws Exception {
 		// TODO Auto-generated method stub
-		return sqlSession.selectList("boardMapper.selectBoard", searchVO);
+		return sqlSession.selectList("boardMapper.selectSearchVO", searchVO);
+	}
+
+	@Override
+	public int totalCount(SearchVO searchVO) throws Exception {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne("boardMapper.totalCount",searchVO);
 	}
 }

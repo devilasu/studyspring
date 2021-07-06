@@ -28,7 +28,8 @@ public class BoardServiceImpl implements BoardService{
 
 	@Override
 	public List<BoardVO> searchBoard(SearchVO searchVO) throws Exception {
-		// TODO Auto-generated method stub
+		// TODO searchVO값을 받아 검색과 페이징 처리.
+		searchVO.getPageVO().setTotalcount(boardDAO.totalCount(searchVO));
 		return boardDAO.selectBoard(searchVO);
 	}
 

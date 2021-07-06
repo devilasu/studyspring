@@ -1,14 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="boardMapper">
-	<sql id="boardWhere">
-		<if test="type != null and type != ''">
-			where type = #{type}
-		</if>
+	<sql id="searchWhereSql">
+		where type = #{type}
+		<if test="search_type != '' and search_type != null">
+     	and (
+    	 <if test="search_type == 'all'">
+		    title LIKE '%'||#{search_keyword}||'%'
+		    OR content LIKE '%'||#{search_keyword}||'%'
+	     </if>
+	     <if test="search_type == 'title'">
+	     	title LIKE '%'||#{search_keyword}||'%'
+	     </if>
+	     <if test="search_type == 'content'">
+	     	content LIKE '%'||#{search_keyword}||'%'
+	     </if>
+	     )
+    </if>
 	</sql>
-	<select id="selectBoard" resultType="com.home.vo.BoardVO">
+
+	<select id="selectType" resultType="com.home.vo.BoardVO">
 		select * from tbl_board
-		<include refid="boardWhere" />
+		where type = #{type}
+	</select>
+	
+	<select id="selectAll" resultType="com.home.vo.BoardVO">
+		select * from tbl_board
 	</select>
 
+	<!-- searchVO를 통한 검색 (페이징, 서칭 연관)-->
+	<select id="selectSearchVO" resultType="com.home.vo.BoardVO">
+		select tblB from
+		(
+			select rownum as rnum, tblA.* from
+			(
+				select * from tbl_board
+				<include refid="searchWhereSql" />
+				order by idx desc
+			)tblA
+			<![CDATA[
+			where rownum <= #{pageVO.startNum}+#{pageVO.perPageNum}
+		)tblB
+		where tblB.rnum > #{pageVO.startNum}
+		]]>
+	</select>
+	
+	<!-- totalCount를 구하기 위한 쿼리 -->
+	<select id="totalCount" resultType="int">
+		select count(*) from tbl_board
+		<include refid="searchWhereSql" />
+	</select>
 </mapper>

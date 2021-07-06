@@ -50,8 +50,7 @@ public class AdminBoardController {
 	//게시판관리 요청시 호출.
 	@RequestMapping(value = "/admin/boards/list", method = RequestMethod.GET)
 	public String adminBoardList(Model model) throws Exception{
-		model.addAttribute("boardList", boardService.selectBoard());
-		model.addAttribute("leftMenuList", boardTypeService.selectBoardType());	//left에 전달하는 메뉴목록.
+		//model.addAttribute("boardList", boardService.searchBoard(searchVO));
 		return "on.admin.boardList";
 	}
 

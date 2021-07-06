@@ -22,31 +22,31 @@ public class AdminMenuDAOImpl implements AdminMenuDAO{
 	@Override
 	public int insertMenu(MenuVO menuVO) throws Exception {
 		// TODO Auto-generated method stub
-		return sqlSession.insert("adminMenuMapper.insertMenu",menuVO);
+		return sqlSession.insert("adminMenuMapper.insert",menuVO);
 	}
 
 	@Override
 	public int deleteMenu(String menu_type) throws Exception {
 		// TODO Auto-generated method stub
-		return sqlSession.delete("adminMenuMapper.deleteMenu",menu_type);
+		return sqlSession.delete("adminMenuMapper.delete",menu_type);
 	}
 
 	@Override
 	public int updateMenu(MenuVO menuVO) throws Exception {
 		// TODO Auto-generated method stub
-		return sqlSession.update("adminMenuMapper.updateMenu",menuVO);
+		return sqlSession.update("adminMenuMapper.update",menuVO);
 	}
 
 	@Override
 	public List<MenuVO> selectMenu(Integer parent) throws Exception {
 		// TODO Auto-generated method stub
-		return sqlSession.selectList("adminMenuMapper.selectMenu",parent);
+		return sqlSession.selectList("adminMenuMapper.selectParent",parent);
 	}
 
 	@Override
 	public MenuVO readMenu(String menu_type) throws Exception {
 		// TODO Auto-generated method stub
-		return sqlSession.selectOne("adminMenuMapper.readMenu", menu_type);
+		return sqlSession.selectOne("adminMenuMapper.read", menu_type);
 	}
 
 }

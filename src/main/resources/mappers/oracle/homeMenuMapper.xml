@@ -2,12 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="homeMenuMapper">
 
-<delete id="deleteMenu">
+<delete id="delete">
 	delete from tbl_home_menu
 	where
 	menu_type = #{type}
 </delete>
-<insert id="insertMenu">
+<insert id="insert">
 	insert into tbl_home_menu values(
 	#{type},
 	#{name},
@@ -16,7 +16,7 @@
 	)
 </insert>
 
-<update id="updateMenu">
+<update id="update">
 	update tbl_home_menu
 	set
 	menu_name=#{name},
@@ -24,11 +24,11 @@
 	menu_order = #{orders}
 </update>
 
-<select id="readMenu" resultType="com.home.vo.MenuVO">
+<select id="readType" resultType="com.home.vo.MenuVO">
 	select * from tbl_home_menu where type=#{type}
 </select>
 
-<select id="selectMenu" resultType="com.home.vo.MenuVO">
+<select id="selectParent" resultType="com.home.vo.MenuVO">
 	<choose>
 		<when test="#{menu_parent==null}">
 			select * from tbl_home_menu

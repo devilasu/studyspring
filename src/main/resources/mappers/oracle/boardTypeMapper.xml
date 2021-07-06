@@ -2,18 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="boardTypeMapper">
 
-	<update id="updateBoardType">
+	<update id="update">
 		update tbl_board_type
 		set
 		name=#{name},
 		orders=#{orders},
 		where type=#{type}
 	</update>
-	<delete id="deleteBoardType">
+	<delete id="delete">
 		delete from tbl_board_type
 		where type=#{type}
 	</delete>
-	<insert id="insertBoardType">
+	<insert id="insert">
 		insert into tbl_board_type(
 			type,
 			name,
@@ -25,11 +25,11 @@
 			#{orders}
 		)
 	</insert>
-	<select id="readBoardType" resultType="com.home.vo.BoardTypeVO">
+	<select id="readType" resultType="com.home.vo.BoardTypeVO">
 	select * from tbl_board_type
 	where type=#{type}
 	</select>
-	<select id="selectBoardType" resultType="com.home.vo.BoardTypeVO">
+	<select id="selectAll" resultType="com.home.vo.BoardTypeVO">
 		select * from tbl_board_type
 	</select>
 </mapper>

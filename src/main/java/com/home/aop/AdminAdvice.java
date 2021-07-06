@@ -13,6 +13,7 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import com.home.service.AdminService;
+import com.home.service.BoardTypeService;
 
 @Component
 @Aspect
@@ -21,7 +22,16 @@ public class AdminAdvice {
 	
 	@Inject
 	private AdminService adminService;
+	@Inject
+	private BoardTypeService boardTypeService;
 
+	@Around("execution(* com.home.controller.AdminBoardController.*List(..))")
+	public Object boardMenu(ProceedingJoinPoint pjp) throws Throwable{
+		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
+		request.setAttribute("leftMenuList", boardTypeService.selectBoardType());	//left에 전달하는 메뉴목록.
+		return pjp.proceed();
+	}
+	
 	@Around("execution(* com.home.controller.AdminController.*(..))")
 	public Object adminMenu(ProceedingJoinPoint pjp) throws Throwable{
 		logger.info("어드민 어드바이스 호출");

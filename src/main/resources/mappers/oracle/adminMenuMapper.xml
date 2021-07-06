@@ -31,7 +31,7 @@
 </select>
 
 <!-- type을 통해 한개의 메뉴 검색하는  기능.-->
-<select id="read" resultType="com.home.vo.MenuVO">
+<select id="readType" resultType="com.home.vo.MenuVO">
 	select * from tbl_admin_menu
 	where type=#{type}
 </select>
@@ -48,13 +48,6 @@
 			where parent=#{type}
 		</otherwise>
 	</choose>
-</select>
-
-
-<!-- searchVO를 통한 검색 (페이징, 서칭 연관)-->
-<select id="selectSearchVO" resultType="com.home.vo.MenuVO">
-	select * from tbl_admin_menu
-	
 </select>
 
 </mapper>

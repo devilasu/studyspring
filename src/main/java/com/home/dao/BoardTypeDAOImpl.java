@@ -16,31 +16,31 @@ public class BoardTypeDAOImpl implements BoardTypeDAO{
 	@Override
 	public BoardTypeVO readBoardType(String board_type) throws Exception {
 		// TODO Auto-generated method stub
-		return sqlSession.selectOne("boardTypeMapper.readBoardType", board_type);
+		return sqlSession.selectOne("boardTypeMapper.readType", board_type);
 	}
 
 	@Override
 	public List<BoardTypeVO> selectBoardType() throws Exception {
 		// TODO Auto-generated method stub
-		return sqlSession.selectList("boardTypeMapper.selectBoardType");
+		return sqlSession.selectList("boardTypeMapper.selectAll");
 	}
 
 	@Override
 	public int insertBoardType(BoardTypeVO boardTypeVO) throws Exception {
 		// TODO Auto-generated method stub
-		return sqlSession.insert("boardTypeMapper.insertBoardType",boardTypeVO);
+		return sqlSession.insert("boardTypeMapper.insert",boardTypeVO);
 	}
 
 	@Override
 	public int deleteBoardType(String board_type) throws Exception {
 		// TODO Auto-generated method stub
-		return sqlSession.delete("boardTypeMapper.deleteBoardType",board_type);
+		return sqlSession.delete("boardTypeMapper.delete",board_type);
 	}
 
 	@Override
 	public int updateBoardType(BoardTypeVO boardTypeVO) throws Exception {
 		// TODO Auto-generated method stub
-		return sqlSession.update("boardTypeMapper.updateBoardType",boardTypeVO);
+		return sqlSession.update("boardTypeMapper.update",boardTypeVO);
 	}
 
 }
