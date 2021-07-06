@@ -26,9 +26,11 @@
 		</c:forEach>
 	</table>
 	<div id="paging" align="center">
-		<a href="#">prev</a>
-		<a href="#">1</a>
-		<a href="#">next</a>
+		<button value="${searchVO.pageVO.startPageNum-1}" id="btn_paging_prev" ${(searchVO.pageVO.prev)?'':'disabled'}>prev</button>
+		<c:forEach begin="${searchVO.pageVO.startPageNum}" end="${searchVO.pageVO.endPageNum}" step="1" var="pageNum">
+			<a href="#">${pageNum}</a>
+		</c:forEach>
+		<button value="${searchVO.pageVO.endPageNum+1}" id="btn_paging_next" ${(searchVO.pageVO.next)?'':'disabled'}>next</button>
 	</div>
 	<br>
 	<button id="btn_insert_form">게시물 추가</button>
@@ -43,6 +45,28 @@
 				dataType:"",
 				success:function(result){},
 				error:function(){}
+			});
+		});
+		$("#btn_paging_prev").click(function(){
+			$.ajax({
+				url:"/admin/boards/${searchVO.type}?page="+$(this).val()+"&searchKeyword="+"&searchType=",
+				type:"GET",
+				dataType:"",
+				success:function(result){
+					$("section").parent().html(result);
+					},
+				error:function(){alert("서버 전송에 실패했습니다.");}
+			});
+		});
+		$("#btn_paging_next").click(function(){
+			$.ajax({
+				url:"/admin/boards/${searchVO.type}?page="+$(this).val()+"&searchKeyword="+"&searchType=",
+				type:"GET",
+				dataType:"",
+				success:function(result){ 
+					$("section").parent().html(result);
+					},
+				error:function(){alert("서버 전송에 실패했습니다.");}
 			});
 		});
 	});

@@ -6,7 +6,7 @@ body{
     word-wrap:break-word !important;
 }
 
-header, nav, aside, section, article, div#wrap, footer{
+header, nav, aside, section, article, div#wrap, footer, div#section{
     border: 1px solid black;
     box-sizing: border-box;
 }
@@ -27,7 +27,7 @@ aside{
     height:inherit;
     float:left;
 }
-section{
+section, div#section{
     width:85%;
     height:inherit;
     float:left;

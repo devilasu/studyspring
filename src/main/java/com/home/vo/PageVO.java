@@ -16,10 +16,12 @@ public class PageVO {
 	private boolean prev;		//페이징에서 이전칸으로 이동
 	private boolean next;		//페이징에서 다음칸으로 이동
 	
+	
 	@Override
 	public String toString() {
 		return "PageVO [perPageNum=" + perPageNum + ", pageListNum=" + pageListNum + ", page=" + page + ", totalcount="
-				+ totalcount + ", startNum=" + startNum + ", prev=" + prev + ", next=" + next + "]";
+				+ totalcount + ", startNum=" + startNum + ", startPageNum=" + startPageNum + ", endPageNum="
+				+ endPageNum + ", prev=" + prev + ", next=" + next + "]";
 	}
 	public int getPerPageNum() {
 		return perPageNum;
@@ -80,13 +82,15 @@ public class PageVO {
 	}
 	
 	public void calcPaging() {
+		System.out.println("calc입력값: "+toString());
 		startNum = (page-1)*perPageNum;
-		startPageNum = 1+(int)(Math.floor(page/pageListNum)*pageListNum);
-		double tmp = Math.ceil(page/pageListNum)*pageListNum;
-		double tmp2 = Math.ceil(totalcount/perPageNum);
+		startPageNum = 1+(int)(Math.floor((double)(page-1)/(double)pageListNum)*pageListNum);
+		double tmp = Math.ceil((double)page/(double)pageListNum)*pageListNum;
+		double tmp2 = Math.ceil((double)totalcount/(double)perPageNum);
 		endPageNum = (tmp<tmp2)?(int)tmp:(int)tmp2;
 		prev = (page>pageListNum)?true:false;
 		next = (endPageNum%pageListNum==0)?true:false;
+		System.out.println("calc계산값: "+toString());
 	}
 	
 }
