@@ -24,9 +24,9 @@ public class AdminAdvice {
 	private AdminService adminService;
 	@Inject
 	private BoardTypeService boardTypeService;
-
+	
 	@Around("execution(* com.home.controller.AdminBoardController.*List(..))")
-	public Object boardMenu(ProceedingJoinPoint pjp) throws Throwable{
+	public Object leftMenu(ProceedingJoinPoint pjp) throws Throwable{
 		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
 		request.setAttribute("leftMenuList", boardTypeService.selectBoardType());	//left에 전달하는 메뉴목록.
 		return pjp.proceed();

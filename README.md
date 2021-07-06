@@ -1,15 +1,20 @@
+#### 20210707 (수) 작업예정
+- RestAPI에 맞는 Controller구조 기획, 페이징과 서칭을 위해 JSP에 form 추가
+- jsp에서 type, page, keyword, searchType를 넘겨주고 Controller에서는 결과값을넘겨주는 것... 이전페이지는 javascript(history)로 처리가 가능한가? 처리할 경우(ajax를 이용한 검색 값도 남는지 확인이 필요.)
+
 #### 20210706 (화) 작업
 - 생성 부분에서 정지.
 - Mapper, DAO, Service 쿼리 및 함수 이름 통일 및 수정 작업.
-- 페이징, 서칭 구현 시작.
 - list로 끝나는 함수에 AOP를 이용하여 left_menu 값을 항상 전달한다.
-
+- 페이징, 서칭 Controller 제작중 문제 발생.
 - (restAPI에 대한 고민)
 - restAPI로 구현하는 경우 중간 null값 입력이 안된다. boards/list/{type} 과 boards/list/{type}/{page}/... 등등을 함수 하나로 연동이 가능할까? 각 값들이 0 혹은 -1일경우 없는 수로 처리하기에도 애매하다...
+- 어떻게 해결해야 하는가? 각 데이터에 대한 임시null값 지정하는 것은 에러발생의 소지가 많아 문제가 된다.
+- 그렇다고 각각 상황에 따라 모든 매핑함수를 만드는 것은 비슷한 역할의 코드가 너무 많아져 생산성이 떨어진다.
+- 내가 만든 구조가 잘못되었는가?(고민해볼 여지가 있다. RestAPI에 최적화된 구조가 있을 것이다.)
+- 위에서는 list까지만 구현하고, 실제 값들은 json으로 전달하면 문제가 해결되지 않을까?
 
-- jsp에서 type, page, keyword, searchType를 넘겨주고 Controller에서는 결과값을넘겨주는 것... 이전페이지는 javascript(history)로 처리가 가능한가? 처리할 경우(RestAPI를 이용한 검색 값도 남는지 확인이 필요.)
-
-- AdminBoardController의 두 함수를 합치는 작업.  type에 insertForm값이 들어오는 불상사 발생. 
+- AdminBoardController의 두 함수를 합치는 작업.  type에 insertForm값이 들어오는 불상사 발생. (해결)
 - boards CUD 작업.
 - insertForm을 호출하는 부분 작성. admin/boards/{type}/insert_form (get)
 - 동작: type에 따라서 게시판추가의 type default 값이 달라지도록 만든다.

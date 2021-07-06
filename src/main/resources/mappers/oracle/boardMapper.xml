@@ -30,18 +30,18 @@
 
 	<!-- searchVO를 통한 검색 (페이징, 서칭 연관)-->
 	<select id="selectSearchVO" resultType="com.home.vo.BoardVO">
-		select tblB from
+		select * from
 		(
-			select rownum as rnum, tblA.* from
+			select rownum as rnum, tbl_a.* from
 			(
 				select * from tbl_board
 				<include refid="searchWhereSql" />
 				order by idx desc
-			)tblA
+			) tbl_a
 			<![CDATA[
 			where rownum <= #{pageVO.startNum}+#{pageVO.perPageNum}
-		)tblB
-		where tblB.rnum > #{pageVO.startNum}
+		) tbl_b
+		where tbl_b.rnum > #{pageVO.startNum}
 		]]>
 	</select>
 	

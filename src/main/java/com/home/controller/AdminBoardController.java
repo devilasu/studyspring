@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.home.service.BoardService;
 import com.home.service.BoardTypeService;
+import com.home.vo.PageVO;
 import com.home.vo.SearchVO;
 
 /**
@@ -33,6 +34,7 @@ public class AdminBoardController {
 		searchVO.setSearch_keyword(searchKeyword);
 		searchVO.setSearch_type(searchType);
 		searchVO.setType(type);
+		searchVO.setPageVO(new PageVO());
 		searchVO.getPageVO().setPage(page);
 		model.addAttribute("boardList", boardService.searchBoard(searchVO));
 		return "admin/boardList";
@@ -43,6 +45,8 @@ public class AdminBoardController {
 	public String selectedBoardList(@PathVariable String type, Model model) throws Exception{
 		SearchVO searchVO = new SearchVO();
 		searchVO.setType(type);
+		searchVO.setPageVO(new PageVO());
+		
 		model.addAttribute("boardList",boardService.searchBoard(searchVO));
 		return "admin/boardList";
 	}
@@ -50,7 +54,10 @@ public class AdminBoardController {
 	//게시판관리 요청시 호출.
 	@RequestMapping(value = "/admin/boards/list", method = RequestMethod.GET)
 	public String adminBoardList(Model model) throws Exception{
-		//model.addAttribute("boardList", boardService.searchBoard(searchVO));
+		SearchVO searchVO = new SearchVO();
+		searchVO.setPageVO(new PageVO());
+		searchVO.setType("notice");	//기본값은 공지사항(안전을 위해서는 select로 첫번째 메뉴값을 가져오는 것도 좋다.)
+		model.addAttribute("boardList", boardService.searchBoard(searchVO));
 		return "on.admin.boardList";
 	}
 

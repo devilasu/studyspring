@@ -17,7 +17,7 @@
 	$(document).ready(function(){
 		$(".leftMenu").click(function(){
 			$.ajax({
-				url:"/admin/boards/list/"+$(this).attr("id"),//+"/page/keyword",
+				url:"/admin/boards/list/"+$(this).attr("id"),
 				type:"GET",
 				datatype:"html",
 				success:function(result){
