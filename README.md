@@ -18,8 +18,8 @@
 
 
 #### 계획표.
+- admin 게시판 관리 CRUD 구현 -R 구현 
 - 관리자 페이지 이후 로그인 구현.
-- admin 게시판 관리 CRUD 구현
 - admin home메뉴CRUD구현.
 - member, product 관련 테이블 구현.
 - admin 사용자 관리 CRUD 구현
