@@ -3,7 +3,7 @@
 - DB: oracle
 - framework: spring
 - 현재 사용 기능: mybatis, junit, AOP, Tiles, AOP, RestAPI
-- 앞으로 추가 예정: spring security(로그인, 회원관리), 파일 업로드, jackson
+- 앞으로 추가 예정: spring security, 파일 업로드, jackson
 - 본 프로젝트는 학습목적으로 다양한 기술들을 복합적으로 사용하여 하나의 웹페이지를 구축하는 것이 목적.
 - 관리자 기능: 메뉴 관리, 유저 관리, 게시판 관리, 상품 관리
 - 사용자 기능: 상품 목록, 상품 구매, 회원가입, 로그인, 마이페이지
@@ -24,6 +24,7 @@
 - member, product 관련 테이블 구현.
 - admin 사용자 관리 CRUD 구현
 - admin 상품관리 CRUD 구현
+- 스프링 시큐리티를 사용하여 로그인 및 권한 설정시 url과 시큐리티와의 연동 구조 생각해야함.
 
 
 - 메뉴관리: tbl_board_type, 게시판관리: tbl_board, 유저관리: tbl_member(예정), 상품관리: tbl_product(예정)
