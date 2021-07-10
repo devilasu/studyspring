@@ -40,6 +40,12 @@
 	</select>
 	<input type="text" id="searchKeyword">
 	<button id="btn_search">검색</button>
+	<!-- 한글 검색을 위한 URL 변수를 만드는 부분. -->
+	<c:url value="/admin/boards/${searchVO.type}" var="searchURL">
+		<c:param name="page" value="${searchVO.pageVO.page}" />
+		<c:param name="searchKeyword" value=$("#searchKeyword").val() />
+		<c:param name="searchType" value=$("#searchType option:selected").val() />
+	</c:url>
 	
 	<!-- <button id="btn_insert_form">게시물 추가</button> -->
 	
@@ -79,9 +85,8 @@
 			});
 		});
 		$("#btn_search").click(function(){
-			var keyword = java.net.URLEncoder.encode($("#searchKeyword").val(),"utf-8");
 			$.ajax({
-				url:"/admin/boards/${searchVO.type}?page=${searchVO.pageVO.page}&searchKeyword="+keyword+"&searchType="+$("#searchType option:selected").val(),
+				url:"${searchURL}", //"/admin/boards/${searchVO.type}?page=${searchVO.pageVO.page}&searchKeyword="+$("#searchKeyword").val()+"&searchType="+$("#searchType option:selected").val(),
 				type:"GET",
 				dataType:"",
 				success:function(result){ 
