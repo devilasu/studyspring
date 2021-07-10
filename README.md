@@ -13,7 +13,7 @@
 #### 20210710 (토) 작업예정
 - 서칭 keyword 값의 한글 인코딩 문제 해결.
 - html부분에서 (jstl의 url을 사용하여)처리 후 ajax처리...? (부분갱신을 위해서)
-- 
+- tiles 설정부분 수정.(.jsp 파일 분류. board는 board끼리, tiles-define 부분도 수정 필요. 파일명 정리)
 - boards CUD 작업.
 - RestAPI에 맞는 Controller구조 기획
 - 현재: boards/{type}/{idx}/replies/attaches 방식으로 만들 계획(문서 작성)
