@@ -40,12 +40,6 @@
 	</select>
 	<input type="text" id="searchKeyword">
 	<button id="btn_search">검색</button>
-	<!-- 한글 검색을 위한 URL 변수를 만드는 부분. -->
-	<c:url value="/admin/boards/${searchVO.type}" var="searchURL">
-		<c:param name="page" value="${searchVO.pageVO.page}" />
-		<c:param name="searchKeyword" value=$("#searchKeyword").val() />
-		<c:param name="searchType" value=$("#searchType option:selected").val() />
-	</c:url>
 	
 	<!-- <button id="btn_insert_form">게시물 추가</button> -->
 	
@@ -86,7 +80,8 @@
 		});
 		$("#btn_search").click(function(){
 			$.ajax({
-				url:"/admin/boards/${searchVO.type}?page=${searchVO.pageVO.page}&searchKeyword="+$("#searchKeyword").val()+"&searchType="+$("#searchType option:selected").val(),
+				//encodeURI를 사용하여 searchKeyword값 처리. 확인 요망.
+				url:"/admin/boards/${searchVO.type}?page=${searchVO.pageVO.page}&searchKeyword="+encodeURI($("#searchKeyword").val(),"UTF-8")+"&searchType="+$("#searchType option:selected").val(),
 				type:"GET",
 				dataType:"",
 				success:function(result){ 
