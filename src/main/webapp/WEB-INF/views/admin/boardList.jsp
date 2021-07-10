@@ -86,7 +86,7 @@
 		});
 		$("#btn_search").click(function(){
 			$.ajax({
-				url:"${searchURL}", //"/admin/boards/${searchVO.type}?page=${searchVO.pageVO.page}&searchKeyword="+$("#searchKeyword").val()+"&searchType="+$("#searchType option:selected").val(),
+				url:"/admin/boards/${searchVO.type}?page=${searchVO.pageVO.page}&searchKeyword="+$("#searchKeyword").val()+"&searchType="+$("#searchType option:selected").val(),
 				type:"GET",
 				dataType:"",
 				success:function(result){ 
