@@ -79,9 +79,8 @@
 			});
 		});
 		$("#btn_search").click(function(){
-			var keyword = java.net.URLEncoder.encode($("#searchKeyword").val(),"utf-8");
 			$.ajax({
-				url:"/admin/boards/${searchVO.type}?page=${searchVO.pageVO.page}&searchKeyword="+keyword+"&searchType="+$("#searchType option:selected").val(),
+				url:"${url}&page=${searchVO.pageVO.page}",
 				type:"GET",
 				dataType:"",
 				success:function(result){ 

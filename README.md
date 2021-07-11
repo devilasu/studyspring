@@ -10,8 +10,8 @@
 - 추가 기능: 추천 상품, 인기 상품, 신상품, 할인상품 기능(DB에 테이블을 추가 하는 방식으로 기능 추가)
 
 
-#### 20210707 (수) 작업예정
-- 서칭 keyword 값의 한글 인코딩 문제 해결.
+#### 20210708 (목) 작업.
+- 서칭 keyword 값의 한글 인코딩 문제 해결.-jstl의 c:url
 - boards CUD 작업.
 - RestAPI에 맞는 Controller구조 기획
 - 현재: boards/{type}/{idx}/replies/attaches 방식으로 만들 계획(문서 작성)
@@ -20,6 +20,7 @@
 #### 계획표.
 - admin 게시판 관리 CRUD 구현 -R 구현 
 - 관리자 페이지 이후 로그인 구현.
+- 파일업로드 구현시 VO에 파일이름을 list로 구현해보자.
 - admin home메뉴CRUD구현.
 - member, product 관련 테이블 구현.
 - admin 사용자 관리 CRUD 구현
