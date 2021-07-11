@@ -80,7 +80,8 @@
 		});
 		$("#btn_search").click(function(){
 			$.ajax({
-				url:"${url}&page=${searchVO.pageVO.page}",
+				//encodeURI를 사용하여 searchKeyword값 처리. 확인 요망.
+				url:"/admin/boards/${searchVO.type}?page=${searchVO.pageVO.page}&searchKeyword="+encodeURI($("#searchKeyword").val(),"UTF-8")+"&searchType="+$("#searchType option:selected").val(),
 				type:"GET",
 				dataType:"",
 				success:function(result){ 

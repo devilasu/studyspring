@@ -10,11 +10,7 @@
 - 추가 기능: 추천 상품, 인기 상품, 신상품, 할인상품 기능(DB에 테이블을 추가 하는 방식으로 기능 추가)
 
 
-#### 20210708 (목) 작업.
-- 서칭 keyword 값의 한글 인코딩 문제 해결.-jstl의 c:url
-- boards CUD 작업.
-- RestAPI에 맞는 Controller구조 기획
-- 현재: boards/{type}/{idx}/replies/attaches 방식으로 만들 계획(문서 작성)
+#### 20210712 (월) 작업
 
 
 #### 계획표.
@@ -44,9 +40,19 @@
 - mapper부터 dao, service를 제작할때, 무엇을 기준으로 삼을지 명확하게 할 필요가 있다.
 - 	RestAPI
 - RestAPI도 결국은 url을 제작하는 규약(칙)에 불과하다. 너무 하나만 생각하여 쿼리스트링을 사용하지 않은 것이 문제. 분류(경로)는 RestAPI방식으로, 정렬, 검색, 필터 등은 쿼리스트링으로 사용하는 것이 좋다.(모든 것을 RestAPI로 사용할 수 없다. 진짜 불가능한가?*)
-- 
 
 - DAO, Service 에서의 변수명 설정 시, DAO는 Mapper과 그대로 쓰되, 오버로딩보다 인자가 없는 함수는 selectALLList가 더 직관적일 듯 하다. 이는 Service도 마찮가지. (무엇을 중심으로 구성하고 기획해야 문제가 덜 생기고 직관적이 되는지 알아볼 필요가 있다)
+
+#### 20210710 (토) 작업
+- 서칭 keyword 값의 한글 인코딩 문제 해결. encodeURI 사용
+- html부분에서 (jstl의 url을 사용하여)처리 후 ajax처리...? (부분갱신을 위해서)
+- tiles 설정부분 수정.(.jsp 파일 분류. board는 board끼리, tiles-define 부분도 수정 필요. 파일명 정리)
+- boards CUD 작업.
+- RestAPI에 맞는 Controller구조 기획
+- 현재: boards/{type}/{idx}/replies/attaches 방식
+
+#### 20210708 (목) 작업.
+- 서칭 keyword 값의 한글 인코딩 문제 해결.-jstl의 c:url
 
 #### 20210706 (화) 작업
 - 생성 부분에서 정지.
