@@ -89,7 +89,7 @@ public class PageVO {
 		double tmp2 = Math.ceil((double)totalcount/(double)perPageNum);
 		endPageNum = (tmp<tmp2)?(int)tmp:(int)tmp2;
 		prev = (page>pageListNum)?true:false;
-		next = (endPageNum%pageListNum==0)?true:false;
+		next = (endPageNum!=0&&endPageNum%pageListNum==0)?true:false;
 		System.out.println("calc계산값: "+toString());
 	}
 	

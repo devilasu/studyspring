@@ -41,7 +41,7 @@
 	<input type="text" id="searchKeyword" onkeypress="javascript:if(event.keyCode==13){printBoardList(1);return false;}" value="${searchVO.search_keyword}">
 	<button id="btn_search">검색</button>
 	
-	<!-- <button id="btn_insert_form">게시물 추가</button> -->
+	<button id="btn_insert_form">게시물 추가</button>
 	
 </section>
 
@@ -57,7 +57,9 @@ function printBoardList(pageNum){
 		error:function(){alert("서버 전송에 실패했습니다.");}
 	});
 }
+</script>
 
+<script>
 	$(document).ready(function(){
 		$("#btn_insert_form").click(function(){
 			$.ajax({
@@ -68,6 +70,7 @@ function printBoardList(pageNum){
 				error:function(){}
 			});
 		});
+		
 		$("#btn_paging_prev").click(function(){
 			printBoardList($(this).val())
 		});
