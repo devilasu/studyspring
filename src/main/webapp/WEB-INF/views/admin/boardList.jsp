@@ -28,7 +28,7 @@
 	<div id="paging" align="center">
 		<button value="${searchVO.pageVO.startPageNum-1}" id="btn_paging_prev" ${(searchVO.pageVO.prev)?'':'disabled'}>prev</button>
 		<c:forEach begin="${searchVO.pageVO.startPageNum}" end="${searchVO.pageVO.endPageNum}" step="1" var="pageNum">
-			<a href="#">${pageNum}</a>
+			<a href="javascript:void(0);" onclick="printBoardList(${pageNum});">${pageNum}</a>
 		</c:forEach>
 		<button value="${searchVO.pageVO.endPageNum+1}" id="btn_paging_next" ${(searchVO.pageVO.next)?'':'disabled'}>next</button>
 	</div>
@@ -38,7 +38,7 @@
 		<option value="title" >제목</option>
 		<option value="content" >내용</option>
 	</select>
-	<input type="text" id="searchKeyword">
+	<input type="text" id="searchKeyword" onkeypress="javascript:if(event.keyCode==13){printBoardList(1);return false;}" value="${searchVO.search_keyword}">
 	<button id="btn_search">검색</button>
 	
 	<!-- <button id="btn_insert_form">게시물 추가</button> -->
@@ -46,50 +46,36 @@
 </section>
 
 <script>
+function printBoardList(pageNum){
+	$.ajax({
+		url:"/admin/boards/${searchVO.type}?page="+pageNum+"&searchKeyword="+encodeURI($("#searchKeyword").val(),"UTF-8")+"&searchType="+$("#searchType option:selected").val(),
+		type:"GET",
+		dataType:"html",
+		success:function(result){
+			$("section").parent().html(result);
+			},
+		error:function(){alert("서버 전송에 실패했습니다.");}
+	});
+}
+
 	$(document).ready(function(){
 		$("#btn_insert_form").click(function(){
 			$.ajax({
 				url:"boards/insertForm",
 				type:"POST",
-				dataType:"",
+				dataType:"html",
 				success:function(result){},
 				error:function(){}
 			});
 		});
 		$("#btn_paging_prev").click(function(){
-			$.ajax({
-				url:"/admin/boards/${searchVO.type}?page="+$(this).val()+"&searchKeyword="+"&searchType=",
-				type:"GET",
-				dataType:"",
-				success:function(result){
-					$("section").parent().html(result);
-					},
-				error:function(){alert("서버 전송에 실패했습니다.");}
-			});
+			printBoardList($(this).val())
 		});
 		$("#btn_paging_next").click(function(){
-			$.ajax({
-				url:"/admin/boards/${searchVO.type}?page="+$(this).val()+"&searchKeyword="+"&searchType=",
-				type:"GET",
-				dataType:"",
-				success:function(result){ 
-					$("section").parent().html(result);
-					},
-				error:function(){alert("서버 전송에 실패했습니다.");}
-			});
+			printBoardList($(this).val());
 		});
 		$("#btn_search").click(function(){
-			$.ajax({
-				//encodeURI를 사용하여 searchKeyword값 처리. 확인 요망.
-				url:"/admin/boards/${searchVO.type}?page=${searchVO.pageVO.page}&searchKeyword="+encodeURI($("#searchKeyword").val(),"UTF-8")+"&searchType="+$("#searchType option:selected").val(),
-				type:"GET",
-				dataType:"",
-				success:function(result){ 
-					alert(keyword);
-					$("section").parent().html(result);
-					},
-				error:function(){}
-			});
+			printBoardList(1);
 		});
 	});
 </script>
