@@ -27,6 +27,6 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model) throws Exception {
 		logger.info("홈 컨트롤러 호출");
-		return "no.home.index";
+		return "no.member.home.index";
 	}
 }

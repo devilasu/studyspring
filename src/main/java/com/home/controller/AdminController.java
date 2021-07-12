@@ -28,12 +28,12 @@ public class AdminController {
 	public String homeMenuList(Model model) throws Exception{
 		
 		model.addAttribute("leftMenuList", homeMenuService.selectMenu(null));	//left에 전달하는 메뉴목록.
-		return "on.admin.menuList";
+		return "on.admin.home.menuList";
 	}
 	//관리자 메인페이지 요청시 호출
 	@RequestMapping(value = "/admin", method = RequestMethod.GET)
 	public String adminMainPage() throws Exception{
 		logger.info("어드민 컨트롤러 호출");
-		return "no.admin.index";
+		return "no.admin.home.index";
 	}
 }
