@@ -10,6 +10,13 @@
 - 추가 기능: 추천 상품, 인기 상품, 신상품, 할인상품 기능(DB에 테이블을 추가 하는 방식으로 기능 추가)
 
 
+#### 20210713 (화) 작업예정
+- admin/boards/{type}/write 의 get,post로 write폼과 C 구현.
+- admin/boards/{type}/{idx}를 사용하여 update, delete 구현.
+- 댓글 구현
+- 파일 업로드 구현
+- 스프링 시큐리티를 사용하여 로그인 구현.
+
 #### 20210712 (월) 작업
 - 페이징 오류 수정
 - tiles의 구조 개선
@@ -17,13 +24,12 @@
 - searching 엔터 기능 추가.
 - tiles는 *갯수에 따른 필터가 불가능.(on.*.*과 on.*.*.*이 구분이 안된다.)
 - 해결: 폴더 구조를 변경하여 세부적인 것 한개로 처리.
-- 
 
 #### 계획표.
 - admin 게시판 관리 CRUD 구현 -R 구현 
 - 관리자 페이지 이후 로그인 구현.
 - 파일업로드 구현시 VO에 파일이름을 list로 구현해보자.
-- admin home메뉴CRUD구현.
+- admin home메뉴CRUD구현.(부분 완료)
 - member, product 관련 테이블 구현.
 - admin 사용자 관리 CRUD 구현
 - admin 상품관리 CRUD 구현

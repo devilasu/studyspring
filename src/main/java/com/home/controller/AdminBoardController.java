@@ -27,9 +27,9 @@ public class AdminBoardController {
 	 */
 	//게시판관리의 CRUD
 	//게시물 추가
-	@RequestMapping(value = "/admin/boards/{type}", method = RequestMethod.POST)
+	@RequestMapping(value = "/admin/boards/{type}/write", method = RequestMethod.GET)
 	public String insertBoardForm() throws Exception{
-		return "";
+		return "on.admin.board.boardWrite";
 	}
 	
 	//검색과 페이지이동을 함께 처리하는 함수(ajax에 의한 jsp반환)
