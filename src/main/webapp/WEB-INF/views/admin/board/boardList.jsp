@@ -63,16 +63,18 @@ function printBoardList(pageNum){
 	$(document).ready(function(){
 		$("#btn_insert_form").click(function(){
 			$.ajax({
-				url:"boards/insertForm",
-				type:"POST",
+				url:"/admin/boards/${searchVO.type}/write",
+				type:"GET",
 				dataType:"html",
-				success:function(result){},
+				success:function(result){
+					printBoardList($(this).val());
+				},
 				error:function(){}
 			});
 		});
 		
 		$("#btn_paging_prev").click(function(){
-			printBoardList($(this).val())
+			printBoardList($(this).val());
 		});
 		$("#btn_paging_next").click(function(){
 			printBoardList($(this).val());
