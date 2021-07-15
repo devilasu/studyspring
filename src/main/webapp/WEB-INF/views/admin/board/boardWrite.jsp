@@ -4,8 +4,8 @@
  <select id="type">
      <option> 게시판 종류
  </select>
- <input type="text" name="title">
- <input type="text" name="content">
- <input readonly type="writer" name="writer">
+ 제목 <input type="text" name="title">
+ 내용 <input type="text" name="content">
+ 작성자 <input readonly type="text" name="writer">
  <button type="button" id="btn_insert">글쓰기</button>
  <button type="button" id="btn_list">목록</button>

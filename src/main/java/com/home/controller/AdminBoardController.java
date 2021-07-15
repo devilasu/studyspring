@@ -29,7 +29,7 @@ public class AdminBoardController {
 	//게시물 추가
 	@RequestMapping(value = "/admin/boards/{type}/write", method = RequestMethod.GET)
 	public String insertBoardForm() throws Exception{
-		return "on.admin.board.boardWrite";
+		return "admin/board/boardWrite";
 	}
 	
 	//검색과 페이지이동을 함께 처리하는 함수(ajax에 의한 jsp반환)

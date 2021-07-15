@@ -67,7 +67,7 @@ function printBoardList(pageNum){
 				type:"GET",
 				dataType:"html",
 				success:function(result){
-					printBoardList($(this).val());
+					$("section").parent().html(result);
 				},
 				error:function(){}
 			});
