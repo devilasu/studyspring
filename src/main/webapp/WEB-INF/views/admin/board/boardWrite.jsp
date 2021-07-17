@@ -20,3 +20,11 @@
  <button type="button" id="btn_insert">글쓰기</button>
  <button type="button" id="btn_list">목록</button>
 </section>
+
+<script>
+	$(document).ready(function(){
+		$("#btn_list").click(function(){
+			history.go(0);
+		});
+	});
+</script>
