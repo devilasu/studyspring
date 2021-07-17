@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.home.service.BoardService;
+import com.home.service.BoardTypeService;
 import com.home.vo.PageVO;
 import com.home.vo.SearchVO;
 
@@ -22,13 +23,17 @@ import com.home.vo.SearchVO;
 public class AdminBoardController {
 	@Inject
 	private BoardService boardService;
+	@Inject
+	private BoardTypeService boardTypeService;
 	/**
 	 * 게시판 선택시 게시물 목록을 보내주는 부분.
 	 */
 	//게시판관리의 CRUD
 	//게시물 추가
 	@RequestMapping(value = "/admin/boards/{type}/write", method = RequestMethod.GET)
-	public String insertBoardForm() throws Exception{
+	public String insertBoardForm(@PathVariable String type, Model model) throws Exception{
+		model.addAttribute("boardType",boardTypeService.selectBoardType());
+		model.addAttribute("type",type);
 		return "admin/board/boardWrite";
 	}
 	
