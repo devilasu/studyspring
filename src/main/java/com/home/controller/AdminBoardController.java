@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.home.service.BoardService;
 import com.home.service.BoardTypeService;
+import com.home.vo.BoardVO;
 import com.home.vo.PageVO;
 import com.home.vo.SearchVO;
 
@@ -30,6 +31,12 @@ public class AdminBoardController {
 	 */
 	//게시판관리의 CRUD
 	//게시물 추가
+	@RequestMapping(value = "/admin/boards/{type}/write", method = RequestMethod.POST)
+	public String insertBoard(@PathVariable String type, BoardVO boardVO) throws Exception{
+		return "redirect:/admin/boards/";
+	}
+	
+	//게시물 추가 폼
 	@RequestMapping(value = "/admin/boards/{type}/write", method = RequestMethod.GET)
 	public String insertBoardForm(@PathVariable String type, Model model) throws Exception{
 		model.addAttribute("boardType",boardTypeService.selectBoardType());
