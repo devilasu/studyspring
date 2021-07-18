@@ -18,6 +18,33 @@
 	     )
     </if>
 	</sql>
+	
+	<insert id="insert">
+		<selectKey keyProperty="idx" resultType="int" order="BEFORE">
+		select seq_bno.nextval from dual
+		</selectKey>
+		insert into tbl_board(
+		idx,
+		title,
+		content,
+		writer,
+		viewcount,
+		reg_date,
+		update_date,
+		type
+		)
+		values
+		(
+		#{idx},
+		#{title},
+		#{content},
+		'temp',
+		0,
+		systimestamp,
+		systimestamp,
+		#{type}
+		) 
+	</insert>
 
 	<select id="selectType" resultType="com.home.vo.BoardVO">
 		select * from tbl_board

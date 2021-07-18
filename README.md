@@ -10,6 +10,14 @@
 - 추가 기능: 추천 상품, 인기 상품, 신상품, 할인상품 기능(DB에 테이블을 추가 하는 방식으로 기능 추가)
 
 #### 20210718 (일) 작업예정
+- 현재 write이후 index.jsp로 돌아가는 행위를 /{type}으로 돌아가게 할 방법 연구.
+- admin/boards					전체 갱신
+- admin/boards/{type}			부분 갱신(ajax)
+- admin/boards/{type}/write		Get은 폼 Post는 db연결
+- admin/boards/{type}/{idx}		idx값에 따른 뷰폼(수정가능한 뷰) RUD 처리
+
+
+
 - admin/boards/{type}/{idx}를 사용하여 update, delete 구현.
 - 댓글 구현
 - 파일 업로드 구현
@@ -60,6 +68,7 @@
 - mapper부터 dao, service를 제작할때, 무엇을 기준으로 삼을지 명확하게 할 필요가 있다.
 - 	RestAPI
 - RestAPI도 결국은 url을 제작하는 규약(칙)에 불과하다. 너무 하나만 생각하여 쿼리스트링을 사용하지 않은 것이 문제. 분류(경로)는 RestAPI방식으로, 정렬, 검색, 필터 등은 쿼리스트링으로 사용하는 것이 좋다.(모든 것을 RestAPI로 사용할 수 없다. 진짜 불가능한가?*)
+-작업을 함수화 하고, 사용처 등을 확실히 한다면 이후 수정을 덜 할 수 있을것 같다.
 
 - DAO, Service 에서의 변수명 설정 시, DAO는 Mapper과 그대로 쓰되, 오버로딩보다 인자가 없는 함수는 selectALLList가 더 직관적일 듯 하다. 이는 Service도 마찮가지. (무엇을 중심으로 구성하고 기획해야 문제가 덜 생기고 직관적이 되는지 알아볼 필요가 있다)
 

@@ -16,6 +16,12 @@ public class BoardServiceImpl implements BoardService{
 	BoardDAO boardDAO;
 	
 	@Override
+	public int insertBoard(BoardVO boardVO) throws Exception {
+		// TODO Auto-generated method stub
+		return boardDAO.insertBoard(boardVO);
+	}
+	
+	@Override
 	public List<BoardVO> selectBoard() throws Exception {
 		// TODO Auto-generated method stub
 		return boardDAO.selectBoard();
@@ -32,5 +38,6 @@ public class BoardServiceImpl implements BoardService{
 		searchVO.getPageVO().setTotalcount(boardDAO.totalCount(searchVO));
 		return boardDAO.selectBoard(searchVO);
 	}
+
 
 }

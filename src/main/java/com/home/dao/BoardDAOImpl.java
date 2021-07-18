@@ -14,6 +14,14 @@ import com.home.vo.SearchVO;
 public class BoardDAOImpl implements BoardDAO{
 	@Inject
 	SqlSession sqlSession;
+	
+	
+	@Override
+	public int insertBoard(BoardVO boardVO) throws Exception {
+		// TODO Auto-generated method stub
+		return sqlSession.insert("boardMapper.insert",boardVO);
+	}
+	
 	@Override
 	public List<BoardVO> selectBoard() throws Exception {
 		// TODO Auto-generated method stub
@@ -37,4 +45,5 @@ public class BoardDAOImpl implements BoardDAO{
 		// TODO Auto-generated method stub
 		return sqlSession.selectOne("boardMapper.totalCount",searchVO);
 	}
+
 }

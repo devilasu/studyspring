@@ -32,8 +32,17 @@ public class AdminBoardController {
 	//게시판관리의 CRUD
 	//게시물 추가
 	@RequestMapping(value = "/admin/boards/{type}/write", method = RequestMethod.POST)
-	public String insertBoard(@PathVariable String type, BoardVO boardVO) throws Exception{
-		return "redirect:/admin/boards/";
+	public String insertBoard(@PathVariable String type, BoardVO boardVO, Model model) throws Exception{
+		SearchVO searchVO = new SearchVO();
+		searchVO.setPageVO(new PageVO());
+		searchVO.setType(type);
+
+		boardService.insertBoard(boardVO);
+		
+		model.addAttribute("boardList", boardService.searchBoard(searchVO));			//여기서 calcPage가 일어난다.
+		model.addAttribute("searchVO",searchVO);
+		
+		return "redirect:/admin/boards";
 	}
 	
 	//게시물 추가 폼
@@ -48,10 +57,13 @@ public class AdminBoardController {
 	@RequestMapping(value = "/admin/boards/{type}", method = RequestMethod.GET)
 	public String searchBoardList(@PathVariable String type, @RequestParam("page") Integer page, @RequestParam("searchKeyword") String searchKeyword, @RequestParam("searchType") String searchType, Model model) throws Exception{
 		SearchVO searchVO = new SearchVO();
+		if(searchKeyword!=null)
 		searchVO.setSearch_keyword(searchKeyword);
+		if(searchType!=null)
 		searchVO.setSearch_type(searchType);
 		searchVO.setType(type);
 		searchVO.setPageVO(new PageVO());
+		if(page!=null)
 		searchVO.getPageVO().setPage(page);
 		
 		model.addAttribute("boardList", boardService.searchBoard(searchVO));		//여기서 calcPage가 일어난다.
