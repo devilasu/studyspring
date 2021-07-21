@@ -10,8 +10,12 @@
 - 추가 기능: 추천 상품, 인기 상품, 신상품, 할인상품 기능(DB에 테이블을 추가 하는 방식으로 기능 추가)
 
 #### 20210721 (수) 작업예정
-- admin의 
+- admin board write 부분, adminBaordController 부분 수정 체크
+- view와 update 폼 제작.
+- boardUpdate Mapper 제작.
 - 
+- 이후 스프링 시큐리티 세팅
+- 로그인 구현.
 
 #### 20210720 (화) 작업
 - admin/boards에서 write이후 게시글을 작성한 {type}으로 돌아가는 작업
