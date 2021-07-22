@@ -42,7 +42,7 @@ public class AdminBoardController {
 		model.addAttribute("boardList", boardService.searchBoard(searchVO));			//여기서 calcPage가 일어난다.
 		model.addAttribute("searchVO",searchVO);
 		
-		return "redirect:/admin/boards/"+type+"?page=1&searchKeyword=&searchType=";
+		return "redirect:/admin/boards";
 	}
 	
 	//게시물 추가 폼
