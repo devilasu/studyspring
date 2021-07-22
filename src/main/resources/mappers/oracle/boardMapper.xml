@@ -19,7 +19,12 @@
     </if>
 	</sql>
 	
-	<insert id="insert">
+	<delete id="delete">
+		delete from tbl_board
+		where idx=#{idx}
+	</delete>
+	
+	<insert id="insert" >
 		<selectKey keyProperty="idx" resultType="int" order="BEFORE">
 		select seq_bno.nextval from dual
 		</selectKey>

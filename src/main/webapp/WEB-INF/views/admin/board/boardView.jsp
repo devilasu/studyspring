@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
  <!-- 게시물 뷰 -->
 <section>
-	<form id="boardUpdate" name="boardUpdate" method="post">
+	<form id="boardView" name="boardView" method="get">
 		<br>
 		<c:out value="${boardVO.type}" />
 		<br>
@@ -25,9 +25,18 @@
 			history.go(-1);
 		});
 		
-		$("#btn_write").click(function(){
-			$("form[name='boardWrite']").attr("action","/admin/boards/");
-			$("form[name='boardWrite']").submit();
+		$("#btn_update").click(function(){
+			$("form[name='boardView']").attr("action","/admin/boards/");
+			$("form[name='boardView']").submit();
+		});
+		
+		$("#btn_delete").click(function(){
+			if(confirm("삭제하시겠습니까?")){
+				$.ajax({
+					url:"/admin/boards/${boardVO.type}/${boardVO.idx}",
+					type:"delete"
+				});
+			}
 		});
 	});
 </script>

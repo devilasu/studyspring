@@ -35,13 +35,13 @@ public class AdminBoardController {
 	public String searchBoardList(@PathVariable String type, @RequestParam("ajax")boolean ajax, @RequestParam("page") Integer page, @RequestParam("searchKeyword") String searchKeyword, @RequestParam("searchType") String searchType, Model model) throws Exception{
 		SearchVO searchVO = new SearchVO();
 		if(searchKeyword!=null)
-		searchVO.setSearch_keyword(searchKeyword);
+			searchVO.setSearch_keyword(searchKeyword);
 		if(searchType!=null)
-		searchVO.setSearch_type(searchType);
+			searchVO.setSearch_type(searchType);
 		searchVO.setType(type);
 		searchVO.setPageVO(new PageVO());
 		if(page!=null)
-		searchVO.getPageVO().setPage(page);
+			searchVO.getPageVO().setPage(page);
 		
 		model.addAttribute("boardList", boardService.searchBoard(searchVO));		//여기서 calcPage가 일어난다.
 		model.addAttribute("searchVO",searchVO);
@@ -51,6 +51,7 @@ public class AdminBoardController {
 			return "on.admin.board.boardList";
 		
 	}
+	
 	//게시물 뷰
 	@RequestMapping(value = "/admin/boards/{type}/{idx}", method = RequestMethod.GET)
 	public String viewBoardForm(@PathVariable String type, @PathVariable Integer idx, Model model)throws Exception{
@@ -65,6 +66,15 @@ public class AdminBoardController {
 		return "on.admin.board.boardWrite";
 	}
 	
+	//게시물 삭제
+	@RequestMapping(value = "/admin/boards/{type}/{idx}", method = RequestMethod.DELETE)
+	public String deleteBoard(@PathVariable String type, @PathVariable Integer idx) throws Exception{
+		boardService.deleteBoard(idx);
+		
+		return "/admin/boards/";
+		//+type+"?page=1&searchType=&searchKeyword=&ajax="+false
+	}
+	
 	//게시물 추가
 	@RequestMapping(value = "/admin/boards/{type}/write", method = RequestMethod.POST)
 	public String insertBoard(@PathVariable String type, BoardVO boardVO, Model model) throws Exception{
@@ -72,12 +82,12 @@ public class AdminBoardController {
 		searchVO.setPageVO(new PageVO());
 		searchVO.setType(type);
 
-		boardService.insertBoard(boardVO);
+		int boardIdx = boardService.insertBoard(boardVO);
 		
 		model.addAttribute("boardList", boardService.searchBoard(searchVO));			//여기서 calcPage가 일어난다.
 		model.addAttribute("searchVO",searchVO);
 		
-		return "redirect:/admin/boards/"+type+"?page=1&searchKeyword=&searchType=&ajax=false";
+		return "redirect:/admin/boards/"+type+"/"+boardIdx;
 	}
 	
 	//게시판관리 요청시 호출.

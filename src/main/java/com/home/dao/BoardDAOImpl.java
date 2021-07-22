@@ -15,11 +15,18 @@ public class BoardDAOImpl implements BoardDAO{
 	@Inject
 	SqlSession sqlSession;
 	
+
+	@Override
+	public Integer deleteBoard(Integer idx) throws Exception {
+		// TODO Auto-generated method stub
+		return sqlSession.delete("boardMapper.delete",idx);
+	}
 	
 	@Override
 	public int insertBoard(BoardVO boardVO) throws Exception {
 		// TODO Auto-generated method stub
-		return sqlSession.insert("boardMapper.insert",boardVO);
+		sqlSession.insert("boardMapper.insert",boardVO); 
+		return boardVO.getIdx();
 	}
 	
 	@Override

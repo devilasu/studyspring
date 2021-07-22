@@ -21,7 +21,6 @@ public class AdminController {
 
 	@Inject
 	private HomeMenuService homeMenuService;
-
 	
 	//메뉴관리 요청시 호출.
 	@RequestMapping(value = "/admin/menus", method = RequestMethod.GET)

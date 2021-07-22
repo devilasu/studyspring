@@ -14,6 +14,12 @@ import com.home.vo.SearchVO;
 public class BoardServiceImpl implements BoardService{
 	@Inject
 	BoardDAO boardDAO;
+
+	@Override
+	public Integer deleteBoard(Integer idx) throws Exception {
+		// TODO Auto-generated method stub
+		return boardDAO.deleteBoard(idx);
+	}
 	
 	@Override
 	public int insertBoard(BoardVO boardVO) throws Exception {
