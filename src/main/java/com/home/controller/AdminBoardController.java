@@ -30,9 +30,9 @@ public class AdminBoardController {
 	/**
 	 * Ajax 호출이 존재하는 함수.
 	 */
-	//검색과 페이지이동을 함께 처리하는 함수
-	@RequestMapping(value = "/admin/boards/{type}", params = "ajax=false", method = RequestMethod.GET)
-	public String searchBoardList(@PathVariable String type, @RequestParam("page") Integer page, @RequestParam("searchKeyword") String searchKeyword, @RequestParam("searchType") String searchType, Model model) throws Exception{
+	//검색과 페이지이동을 함께 처리하는 함수(ajax포함)
+	@RequestMapping(value = "/admin/boards/{type}", method = RequestMethod.GET)
+	public String searchBoardList(@PathVariable String type, @RequestParam("ajax")boolean ajax, @RequestParam("page") Integer page, @RequestParam("searchKeyword") String searchKeyword, @RequestParam("searchType") String searchType, Model model) throws Exception{
 		SearchVO searchVO = new SearchVO();
 		if(searchKeyword!=null)
 		searchVO.setSearch_keyword(searchKeyword);
@@ -45,25 +45,11 @@ public class AdminBoardController {
 		
 		model.addAttribute("boardList", boardService.searchBoard(searchVO));		//여기서 calcPage가 일어난다.
 		model.addAttribute("searchVO",searchVO);
-		return "on.admin.board.boardList";
-	}
-	
-	//검색과 페이지이동을 함께 처리하는 함수(ajax에 의한 jsp반환)
-	@RequestMapping(value = "/admin/boards/{type}", params = "ajax=true", method = RequestMethod.GET)
-	public String searchBoardListAjax(@PathVariable String type, @RequestParam("page") Integer page, @RequestParam("searchKeyword") String searchKeyword, @RequestParam("searchType") String searchType, Model model) throws Exception{
-		SearchVO searchVO = new SearchVO();
-		if(searchKeyword!=null)
-			searchVO.setSearch_keyword(searchKeyword);
-		if(searchType!=null)
-			searchVO.setSearch_type(searchType);
-		searchVO.setType(type);
-		searchVO.setPageVO(new PageVO());
-		if(page!=null)
-			searchVO.getPageVO().setPage(page);
+		if(ajax)
+			return "admin/board/boardList";
+		else
+			return "on.admin.board.boardList";
 		
-		model.addAttribute("boardList", boardService.searchBoard(searchVO));		//여기서 calcPage가 일어난다.
-		model.addAttribute("searchVO",searchVO);
-		return "admin/board/boardList";
 	}
 	
 	//게시물 추가 폼

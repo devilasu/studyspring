@@ -10,11 +10,11 @@
 - 추가 기능: 추천 상품, 인기 상품, 신상품, 할인상품 기능(DB에 테이블을 추가 하는 방식으로 기능 추가)
 
 #### 20210723 (금) 작업예정
-- admin board write 부분, adminBaordController 부분 수정 체크
 - view와 update 폼 제작.
 - boardUpdate Mapper 제작.
 
 #### 20210722(목) 작업
+- admin board write 부분, adminBaordController 부분 수정 체크
 - Controller의 마지막에 ajax를 주는 것으로 구분.
 - Rest API라고 하기에는 이상해진다.
 - RequestMapping의 params 속성을 이용해서 구분하는 것이 좋지 않을까?

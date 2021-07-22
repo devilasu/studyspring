@@ -26,16 +26,10 @@ public class AdminAdvice {
 	private BoardTypeService boardTypeService;
 	
 	@Around("execution(* com.home.controller.Admin*.*(..))")
-	public Object leftMenu(ProceedingJoinPoint pjp) throws Throwable{
-		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
-		request.setAttribute("leftMenuList", boardTypeService.selectBoardType());	//left에 전달하는 메뉴목록.
-		return pjp.proceed();
-	}
-	
-	@Around("execution(* com.home.controller.Admin*.*(..))")
 	public Object adminMenu(ProceedingJoinPoint pjp) throws Throwable{
 		logger.info("어드민 어드바이스 호출");
 		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
+		request.setAttribute("leftMenuList", boardTypeService.selectBoardType());	//left에 전달하는 메뉴목록.
 		request.setAttribute("adminMenuList", adminService.selectMenu(null));
 		
 		return pjp.proceed();
