@@ -51,7 +51,12 @@ public class AdminBoardController {
 			return "on.admin.board.boardList";
 		
 	}
-	
+	//게시물 뷰
+	@RequestMapping(value = "/admin/boards/{type}/{idx}", method = RequestMethod.GET)
+	public String viewBoardForm(@PathVariable String type, @PathVariable Integer idx, Model model)throws Exception{
+		model.addAttribute("boardVO", boardService.selectBoard(idx));
+		return "on.admin.board.boardView";
+	}
 	//게시물 추가 폼
 	@RequestMapping(value = "/admin/boards/{type}/write", method = RequestMethod.GET)
 	public String insertBoardForm(@PathVariable String type, Model model) throws Exception{

@@ -9,10 +9,10 @@
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
 		<java-version>1.8</java-version>
-		<org.springframework-version>5.2.5.RELEASE</org.springframework-version>
-		<org.aspectj-version>1.9.0</org.aspectj-version>
-		<org.slf4j-version>1.7.25</org.slf4j-version>
-		<spring.security.version>5.2.3.RELEASE</spring.security.version>
+		<org.springframework-version>5.3.9</org.springframework-version>
+		<org.aspectj-version>1.9.7</org.aspectj-version>
+		<org.slf4j-version>2.0.0-alpha1</org.slf4j-version>
+		<spring.security.version>5.5.1</spring.security.version>
 		<org.apache.tiles-version>3.0.5</org.apache.tiles-version>
 	</properties>
 	<repositories>

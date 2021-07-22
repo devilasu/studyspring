@@ -41,6 +41,12 @@ public class BoardDAOImpl implements BoardDAO{
 	}
 
 	@Override
+	public BoardVO selectBoard(Integer idx) throws Exception {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne("boardMapper.selectIdx",idx);
+	}
+	
+	@Override
 	public int totalCount(SearchVO searchVO) throws Exception {
 		// TODO Auto-generated method stub
 		return sqlSession.selectOne("boardMapper.totalCount",searchVO);

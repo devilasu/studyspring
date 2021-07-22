@@ -27,6 +27,12 @@ public class BoardServiceImpl implements BoardService{
 		return boardDAO.selectBoard();
 	}
 	
+	@Override
+	public BoardVO selectBoard(Integer idx) throws Exception {
+		// TODO Auto-generated method stub
+		return boardDAO.selectBoard(idx);
+	}
+	
 	public List<BoardVO> selectBoard(String type) throws Exception {
 		// TODO Auto-generated method stub
 		return boardDAO.selectBoard(type);
@@ -38,6 +44,5 @@ public class BoardServiceImpl implements BoardService{
 		searchVO.getPageVO().setTotalcount(boardDAO.totalCount(searchVO));
 		return boardDAO.selectBoard(searchVO);
 	}
-
 
 }

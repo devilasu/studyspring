@@ -15,7 +15,7 @@
 			</tr>
 		</thead>
 		<c:forEach var="boardVO" items="${boardList}">
-			<tr align="center" onclick="location.href='#'" style="cursor:pointer">
+			<tr align="center" onclick="location.href='/admin/boards/${boardVO.type}/${boardVO.idx}'" style="cursor:pointer">
 				<td>${boardVO.idx}</td>
 				<td>${boardVO.type}</td>
 				<td>${boardVO.title}</td>
