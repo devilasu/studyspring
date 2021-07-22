@@ -8,7 +8,7 @@
 		<select id="type" name="type">
 		    <option> 게시판 종류</option>
 		    <c:forEach var="board" items="${boardType}">
-		    <option value="${board.type}" selected="${(board.type==type)?'selected':''}">${board.name}</option>
+		    <option value="${board.type}" ${(board.type==type)?'selected':''}>${board.name}</option>
 		    </c:forEach>
 		</select>
 		<br>
@@ -26,7 +26,7 @@
 <script>
 	$(document).ready(function(){
 		$("#btn_list").click(function(){
-			history.go(0);
+			history.go(-1);
 		});
 		
 		$("#btn_write").click(function(){
