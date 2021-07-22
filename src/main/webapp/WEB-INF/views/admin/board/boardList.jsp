@@ -48,7 +48,7 @@
 <script>
 function printBoardList(pageNum){
 	$.ajax({
-		url:"/admin/boards/${searchVO.type}?page="+pageNum+"&searchKeyword="+encodeURI($("#searchKeyword").val(),"UTF-8")+"&searchType="+$("#searchType option:selected").val(),
+		url:"/admin/boards/${searchVO.type}/ajax?page="+pageNum+"&searchKeyword="+encodeURI($("#searchKeyword").val(),"UTF-8")+"&searchType="+$("#searchType option:selected").val(),
 		type:"GET",
 		dataType:"html",
 		success:function(result){
@@ -63,7 +63,7 @@ function printBoardList(pageNum){
 	$(document).ready(function(){
 		$("#btn_insert_form").click(function(){
 			$.ajax({
-				url:"/admin/boards/${searchVO.type}/write",
+				url:"/admin/boards/${searchVO.type}/write/ajax",
 				type:"GET",
 				dataType:"html",
 				success:function(result){

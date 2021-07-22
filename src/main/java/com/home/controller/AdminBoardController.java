@@ -30,27 +30,17 @@ public class AdminBoardController {
 	 * 게시판 선택시 게시물 목록을 보내주는 부분.
 	 */
 	//게시판관리의 CRUD
-	//게시물 추가
-	@RequestMapping(value = "/admin/boards/{type}/write", method = RequestMethod.POST)
-	public String insertBoard(@PathVariable String type, BoardVO boardVO, Model model) throws Exception{
+	
+	//게시판관리 요청시 호출.
+	@RequestMapping(value = "/admin/boards", method = RequestMethod.GET)
+	public String adminBoardList(Model model) throws Exception{
 		SearchVO searchVO = new SearchVO();
 		searchVO.setPageVO(new PageVO());
-		searchVO.setType(type);
-
-		boardService.insertBoard(boardVO);
+		searchVO.setType("notice");	//기본값은 공지사항(안전을 위해서는 select로 첫번째 메뉴값을 가져오는 것도 좋다.)
 		
 		model.addAttribute("boardList", boardService.searchBoard(searchVO));			//여기서 calcPage가 일어난다.
 		model.addAttribute("searchVO",searchVO);
-		
-		return "redirect:/admin/boards";
-	}
-	
-	//게시물 추가 폼
-	@RequestMapping(value = "/admin/boards/{type}/write", method = RequestMethod.GET)
-	public String insertBoardForm(@PathVariable String type, Model model) throws Exception{
-		model.addAttribute("boardType",boardTypeService.selectBoardType());
-		model.addAttribute("type",type);
-		return "admin/board/boardWrite";
+		return "on.admin.board.boardList";
 	}
 	
 	//검색과 페이지이동을 함께 처리하는 함수(ajax에 의한 jsp반환)
@@ -68,19 +58,51 @@ public class AdminBoardController {
 		
 		model.addAttribute("boardList", boardService.searchBoard(searchVO));		//여기서 calcPage가 일어난다.
 		model.addAttribute("searchVO",searchVO);
-		return "admin/board/boardList";
+		return "on.admin.board.boardList";
 	}
+
 	
-	//게시판관리 요청시 호출.
-	@RequestMapping(value = "/admin/boards", method = RequestMethod.GET)
-	public String adminBoardList(Model model) throws Exception{
+	//게시물 추가
+	@RequestMapping(value = "/admin/boards/{type}/write", method = RequestMethod.POST)
+	public String insertBoard(@PathVariable String type, BoardVO boardVO, Model model) throws Exception{
 		SearchVO searchVO = new SearchVO();
 		searchVO.setPageVO(new PageVO());
-		searchVO.setType("notice");	//기본값은 공지사항(안전을 위해서는 select로 첫번째 메뉴값을 가져오는 것도 좋다.)
+		searchVO.setType(type);
+
+		boardService.insertBoard(boardVO);
 		
 		model.addAttribute("boardList", boardService.searchBoard(searchVO));			//여기서 calcPage가 일어난다.
 		model.addAttribute("searchVO",searchVO);
-		return "on.admin.board.boardList";
+		
+		return "redirect:/admin/boards/"+type+"?page=1&searchKeyword=&searchType=";
 	}
+	
+	//게시물 추가 폼
+	@RequestMapping(value = "/admin/boards/{type}/write/ajax", method = RequestMethod.GET)
+	public String insertBoardFormAjax(@PathVariable String type, Model model) throws Exception{
+		model.addAttribute("boardType",boardTypeService.selectBoardType());
+		model.addAttribute("type",type);
+		return "admin/board/boardWrite";
+	}
+	
+	//검색과 페이지이동을 함께 처리하는 함수(ajax에 의한 jsp반환)
+	@RequestMapping(value = "/admin/boards/{type}/ajax", method = RequestMethod.GET)
+	public String searchBoardListAjax(@PathVariable String type, @RequestParam("page") Integer page, @RequestParam("searchKeyword") String searchKeyword, @RequestParam("searchType") String searchType, Model model) throws Exception{
+		SearchVO searchVO = new SearchVO();
+		if(searchKeyword!=null)
+		searchVO.setSearch_keyword(searchKeyword);
+		if(searchType!=null)
+		searchVO.setSearch_type(searchType);
+		searchVO.setType(type);
+		searchVO.setPageVO(new PageVO());
+		if(page!=null)
+		searchVO.getPageVO().setPage(page);
+		
+		model.addAttribute("boardList", boardService.searchBoard(searchVO));		//여기서 calcPage가 일어난다.
+		model.addAttribute("searchVO",searchVO);
+		return "admin/board/boardList";
+	}
+	
+
 
 }
