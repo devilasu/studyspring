@@ -3,9 +3,6 @@
 --   사이트:      Oracle Database 11g
 --   유형:      Oracle Database 11g
 
-
-
-
 CREATE TABLE studydb.tbl_admin_menu (
     type     VARCHAR2(20 BYTE) NOT NULL,
     name     VARCHAR2(20 BYTE),

@@ -34,7 +34,11 @@
 			if(confirm("삭제하시겠습니까?")){
 				$.ajax({
 					url:"/admin/boards/${boardVO.type}/${boardVO.idx}",
+					async: "true",
 					type:"delete"
+					success:function(result){
+					},
+					error:function(){}
 				});
 			}
 		});

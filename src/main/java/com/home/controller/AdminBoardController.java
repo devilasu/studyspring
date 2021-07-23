@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.home.service.BoardService;
 import com.home.service.BoardTypeService;
@@ -67,11 +68,12 @@ public class AdminBoardController {
 	}
 	
 	//게시물 삭제
+	@ResponseBody
 	@RequestMapping(value = "/admin/boards/{type}/{idx}", method = RequestMethod.DELETE)
 	public String deleteBoard(@PathVariable String type, @PathVariable Integer idx) throws Exception{
 		boardService.deleteBoard(idx);
 		
-		return "/admin/boards/";
+		return "";
 		//+type+"?page=1&searchType=&searchKeyword=&ajax="+false
 	}
 	
