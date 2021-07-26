@@ -7,9 +7,9 @@
 		<br>
 		<c:out value="${boardVO.type}" />
 		<br>
-		제목 <input type="text" name="title" value="${boardVO.title}">
+		제목 <input readonly type="text" name="title" value="${boardVO.title}">
 		<br>
-		내용 <input type="text" name="content" value="${boardVO.content}">
+		내용 <input readonly type="text" name="content" value="${boardVO.content}">
 		<br>
 		작성자 <input readonly type="text" name="writer" value="${boardVO.writer}">
 		<br>
@@ -22,7 +22,7 @@
 <script>
 	$(document).ready(function(){
 		$("#btn_list").click(function(){
-			history.go(-1);
+			location.href("/admin/boards/${boardVO.type}?");
 		});
 		
 		$("#btn_update").click(function(){
