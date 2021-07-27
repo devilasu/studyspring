@@ -14,7 +14,7 @@
 		작성자 <input readonly type="text" name="writer" value="${boardVO.writer}">
 		<br>
 		<button type="button"  id="btn_update">수정</button>
-		<button type="button"  id="btn_delete">삭제</button>
+		<button type="button" id="btn_delete">삭제</button>
 		<button type="button" id="btn_list">목록</button>
 	</form>
 </section>
@@ -34,10 +34,8 @@
 			if(confirm("삭제하시겠습니까?")){
 				$.ajax({
 					url:"/admin/boards/${boardVO.type}/${boardVO.idx}",
-					async: "true",
-					type:"delete"
-					success:function(result){
-					},
+					type:"DELETE"
+					success:function(){},
 					error:function(){}
 				});
 			}
