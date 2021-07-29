@@ -34,7 +34,7 @@
 			if(confirm("삭제하시겠습니까?")){
 				$.ajax({
 					url:"/admin/boards/${boardVO.type}/${boardVO.idx}",
-					type:"DELETE"
+					type:"DELETE",
 					success:function(){},
 					error:function(){}
 				});

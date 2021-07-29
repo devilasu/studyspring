@@ -28,9 +28,12 @@ public class AdminBoardController {
 	@Inject
 	private BoardTypeService boardTypeService;
 	
-	//검색과 페이지이동을 함께 처리하는 함수
-	@RequestMapping(value = "/admin/boards", method = RequestMethod.GET)
-	public String searchBoardList(@RequestParam(value = "type", required = false)String type, @RequestParam("page") Integer page, @RequestParam("searchKeyword") String searchKeyword, @RequestParam("searchType") String searchType, Model model) throws Exception{
+	/**
+	 * Ajax 호출이 존재하는 함수.
+	 */
+	//검색과 페이지이동을 함께 처리하는 함수(ajax포함)
+	@RequestMapping(value = "/admin/boards/{type}", method = RequestMethod.GET)
+	public String searchBoardList(@PathVariable String type, @RequestParam("page") Integer page, @RequestParam("searchKeyword") String searchKeyword, @RequestParam("searchType") String searchType, Model model) throws Exception{
 		SearchVO searchVO = new SearchVO();
 		if(searchKeyword!=null)
 			searchVO.setSearch_keyword(searchKeyword);
