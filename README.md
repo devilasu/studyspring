@@ -24,6 +24,8 @@
 - url구조에서 뷰board와 boards 데이터불러오는 부분 이름 뭐로 설정할까?
 - 뒤로가기를 위한 history 설정은 몇가지 방법이 있는데 뭐가 가장 좋을까?
 - 현재 history방식 유력함.
+- 뒤로가기는 controller영역이 아닌 front-end영역인가?
+- 어찌됐든 방법은 궁금.
 
 #### 20210729 (목) 작업 예정.
 - 쿼리스트링: search, filter, sort
