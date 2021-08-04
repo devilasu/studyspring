@@ -21,6 +21,10 @@
 - @RequestParam에서 required=false설정 시 값이 없다면 null입력, defaultValue=을 이용하여 기본값설정도 가능.
 - 페이지를 이러한 방식으로 처리해도 되지 않았을까?
 
+- url구조에서 뷰board와 boards 데이터불러오는 부분 이름 뭐로 설정할까?
+- 뒤로가기를 위한 history 설정은 몇가지 방법이 있는데 뭐가 가장 좋을까?
+- 현재 history방식 유력함.
+
 #### 20210729 (목) 작업 예정.
 - 쿼리스트링: search, filter, sort
 - 현재 /{type} 을 쿼리스트링 type로 변환.
