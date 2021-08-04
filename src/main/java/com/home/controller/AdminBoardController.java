@@ -71,7 +71,7 @@ public class AdminBoardController {
 	public String deleteBoard(@PathVariable String type, @PathVariable Integer idx) throws Exception{
 		boardService.deleteBoard(idx);
 		
-		return "/admin/boards";
+		return "redirect:/admin/boards";
 		//+type+"?page=1&searchType=&searchKeyword=&ajax="+false
 	}
 	

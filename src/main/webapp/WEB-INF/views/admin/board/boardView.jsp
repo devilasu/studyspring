@@ -22,7 +22,7 @@
 <script>
 	$(document).ready(function(){
 		$("#btn_list").click(function(){
-			location.href("/admin/boards/${boardVO.type}?");
+			location.href("/admin/boards");
 		});
 		
 		$("#btn_update").click(function(){
