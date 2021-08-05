@@ -10,6 +10,19 @@
 - 추가 기능: 추천 상품, 인기 상품, 신상품, 할인상품 기능(DB에 테이블을 추가 하는 방식으로 기능 추가)
 
 #### 20210805 (목) 작업 예정
+- 수요일 계획 정리.
+- ajax 사용 시 뒤로가기 처리: history.pushState, history.popState를 사용할 수 있다.
+- history.pushState({'a':a,'b':b},title, url);
+- $(window).on('popstate', function(event) {window.location = document.location.href;}); 이 부분도 필요한가? 없을것 같다. 확인 필요.
+
+- 뷰 접속 url과 리소스에 접근하는 url을 따로 만든다.
+- 뷰에서는 js에서 ajax를 이용하여 화면을 갱신한다. -뒤로가기는 history 사용.
+- 리소스는 REST방식. 그럼 뷰는? 어떤 url을 사용해야하는가?
+- REST API 방식을 사용하기 위한 공부.
+
+- @RequestParam의 required와 defaultValue를 이용하여 쿼리값의 컨트롤이 가능.
+
+#### 20210804 (수) 계획 예정
 - 이후 jsp파일은 js를 사용하여 제작.
 - 페이지 제작에서 처음 접속부분과 리스트르 불러오는 부분을 구분 가능해진다.(url이 달라진다.)
 - 데이터를 불러오는 부분은 rest방식, tiles를 사용한 뷰를 불러오는 곳은 다른 url 사용.
