@@ -6,6 +6,9 @@ public class SearchVO {
 	private String search_type;
 	private String search_keyword;
 	
+	public SearchVO(String type){
+		this.type = type;
+	}
 	
 	@Override
 	public String toString() {

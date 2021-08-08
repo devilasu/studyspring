@@ -17,7 +17,7 @@ import com.home.vo.PageVO;
 import com.home.vo.SearchVO;
 
 /**
- * 관리자단의 게시판관리의 부분업데이트 처리.
+ * 관리자페이지의 게시판관리 부분 REST API방식
  * @author 김영제
  *
  */
@@ -31,15 +31,14 @@ public class AdminBoardController {
 	/**
 	 * Ajax 호출이 존재하는 함수.
 	 */
-	//검색과 페이지이동을 함께 처리하는 함수(ajax포함)
-	@RequestMapping(value = "/admin/boards/{type}", method = RequestMethod.GET)
-	public String searchBoardList(@PathVariable String type, @RequestParam("page") Integer page, @RequestParam("searchKeyword") String searchKeyword, @RequestParam("searchType") String searchType, Model model) throws Exception{
-		SearchVO searchVO = new SearchVO();
+	@RequestMapping(value = "/admin/boards", method = RequestMethod.GET)
+	public String searchBoardList(@RequestParam("type") String type, @RequestParam("page") Integer page, @RequestParam("searchKeyword") String searchKeyword, @RequestParam("searchType") String searchType, Model model) throws Exception{
+		SearchVO searchVO = new SearchVO(type);
 		if(searchKeyword!=null)
 			searchVO.setSearch_keyword(searchKeyword);
 		if(searchType!=null)
 			searchVO.setSearch_type(searchType);
-		searchVO.setType(type);
+		
 		searchVO.setPageVO(new PageVO());
 		if(page!=null)
 			searchVO.getPageVO().setPage(page);
@@ -78,9 +77,8 @@ public class AdminBoardController {
 	//게시물 추가
 	@RequestMapping(value = "/admin/boards/{type}/write", method = RequestMethod.POST)
 	public String insertBoard(@PathVariable String type, BoardVO boardVO, Model model) throws Exception{
-		SearchVO searchVO = new SearchVO();
+		SearchVO searchVO = new SearchVO(type);
 		searchVO.setPageVO(new PageVO());
-		searchVO.setType(type);
 
 		int boardIdx = boardService.insertBoard(boardVO);
 		
@@ -90,12 +88,16 @@ public class AdminBoardController {
 		return "redirect:/admin/boards/"+type+"/"+boardIdx;
 	}
 	
-	//게시판관리 요청시 호출.
-	@RequestMapping(value = "/admin/boards", method = RequestMethod.GET)
+	/**
+	 * 
+	 * @param model
+	 * @return Tiles
+	 * @throws Exception
+	 */
+	@RequestMapping(value = "/admin/board", method = RequestMethod.GET)
 	public String adminBoardList(Model model) throws Exception{
-		SearchVO searchVO = new SearchVO();
+		SearchVO searchVO = new SearchVO("notice");
 		searchVO.setPageVO(new PageVO());
-		searchVO.setType("notice");	//기본값은 공지사항(안전을 위해서는 select로 첫번째 메뉴값을 가져오는 것도 좋다.)
 		
 		model.addAttribute("boardList", boardService.searchBoard(searchVO));			//여기서 calcPage가 일어난다.
 		model.addAttribute("searchVO",searchVO);

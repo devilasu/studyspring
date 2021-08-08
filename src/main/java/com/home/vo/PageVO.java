@@ -16,7 +16,7 @@ public class PageVO {
 	private boolean prev;		//페이징에서 이전칸으로 이동
 	private boolean next;		//페이징에서 다음칸으로 이동
 	
-	PageVO(){
+	public PageVO(){
 		this.perPageNum = 5;
 		this.pageListNum = 5;
 		this.page = 1;
