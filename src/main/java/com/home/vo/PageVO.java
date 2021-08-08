@@ -6,9 +6,9 @@ package com.home.vo;
  *
  */
 public class PageVO {
-	private int perPageNum = 5;		//한페이지당 게시물 수.		필수
-	private int pageListNum = 3;	//페이징리스트 갯수			필수
-	private int page = 1;			//현재페이지				필수
+	private int perPageNum;		//한페이지당 게시물 수.		필수
+	private int pageListNum;	//페이징리스트 갯수			필수
+	private int page;			//현재페이지				필수
 	private int totalcount;		//게시물 총 갯수.(페이징 리스트처리를 위해 필요.)	필수(세팅후 나머지 변수 자동 계산)
 	private int startNum;		//시작페이지
 	private int startPageNum;	//페이징리스트 시작값
@@ -16,6 +16,11 @@ public class PageVO {
 	private boolean prev;		//페이징에서 이전칸으로 이동
 	private boolean next;		//페이징에서 다음칸으로 이동
 	
+	PageVO(){
+		this.perPageNum = 5;
+		this.pageListNum = 5;
+		this.page = 1;
+	}
 	
 	@Override
 	public String toString() {
