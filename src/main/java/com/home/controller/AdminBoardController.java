@@ -33,8 +33,10 @@ public class AdminBoardController {
 	 */
 	@RequestMapping(value = "/admin/boards", method = RequestMethod.GET)
 	@ResponseBody
-	public String searchBoardList(@RequestParam("type") String type, @RequestParam("page") Integer page, @RequestParam("searchKeyword") String searchKeyword, @RequestParam("searchType") String searchType, Model model) throws Exception{
+	public ResponseEntity<Map> searchBoardList(@RequestParam("type") String type, @RequestParam("page") Integer page, @RequestParam("searchKeyword") String searchKeyword, @RequestParam("searchType") String searchType, Model model) throws Exception{
 		SearchVO searchVO = new SearchVO(type);
+		Map map = new HashMap<String, List<BoardVO>>();
+		
 		if(searchKeyword!=null)
 			searchVO.setSearch_keyword(searchKeyword);
 		if(searchType!=null)
@@ -44,19 +46,20 @@ public class AdminBoardController {
 		if(page!=null)
 			searchVO.getPageVO().setPage(page);
 		
-		model.addAttribute("boardList", boardService.searchBoard(searchVO));		//여기서 calcPage가 일어난다.
-		model.addAttribute("searchVO",searchVO);
-		
-		return "admin/board/boardList";
+		map.put("boardList",boardService.searchBoard(searchVO));	//calc페이지 일어난다.
+		map.put("searchVO",searchVO);
+		ResponseEntity<Map> responseEntity = new ResponseEntity<Map>(map,header,HttpStatusCode.OK);
+
+		return responseEntity;
 		
 	}
 	
 	//게시물 뷰
 	@RequestMapping(value = "/admin/boards/{idx}", method = RequestMethod.GET)
 	@ResponseBody
-	public String viewBoardForm(@PathVariable Integer idx, Model model)throws Exception{
+	public ResponseEntity<Map> viewBoardForm(@PathVariable Integer idx, Model model)throws Exception{
 		model.addAttribute("boardVO", boardService.selectBoard(idx));
-		return "on.admin.board.boardView";
+		return responseEntity;
 	}
 	//게시물 추가 폼
 	@RequestMapping(value = "/admin/boards/writeForm", method = RequestMethod.GET)
