@@ -6,6 +6,10 @@ public class SearchVO {
 	private String search_type;
 	private String search_keyword;
 	
+	public SearchVO() {
+		this.type = "notice";
+	}
+	
 	public SearchVO(String type){
 		this.type = type;
 	}
