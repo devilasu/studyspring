@@ -1,7 +1,13 @@
 package com.home.controller;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import javax.inject.Inject;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.home.service.BoardService;
-import com.home.service.BoardTypeService;
 import com.home.vo.BoardVO;
 import com.home.vo.PageVO;
 import com.home.vo.SearchVO;
@@ -25,17 +30,12 @@ import com.home.vo.SearchVO;
 public class AdminBoardController {
 	@Inject
 	private BoardService boardService;
-	@Inject
-	private BoardTypeService boardTypeService;
-	
-	/**
-	 * Ajax 호출이 존재하는 함수.
-	 */
+
 	@RequestMapping(value = "/admin/boards", method = RequestMethod.GET)
 	@ResponseBody
-	public ResponseEntity<Map> searchBoardList(@RequestParam("type") String type, @RequestParam("page") Integer page, @RequestParam("searchKeyword") String searchKeyword, @RequestParam("searchType") String searchType, Model model) throws Exception{
+	public ResponseEntity<Map<String,List<BoardVO>>> searchBoardList(@RequestParam("type") String type, @RequestParam("page") Integer page, @RequestParam("searchKeyword") String searchKeyword, @RequestParam("searchType") String searchType, Model model) throws Exception{
 		SearchVO searchVO = new SearchVO(type);
-		Map map = new HashMap<String, List<BoardVO>>();
+		Map<String, List<BoardVO>> map = new HashMap<String, List<BoardVO>>();
 		
 		if(searchKeyword!=null)
 			searchVO.setSearch_keyword(searchKeyword);
@@ -46,52 +46,41 @@ public class AdminBoardController {
 		if(page!=null)
 			searchVO.getPageVO().setPage(page);
 		
-		map.put("boardList",boardService.searchBoard(searchVO));	//calc페이지 일어난다.
-		map.put("searchVO",searchVO);
-		ResponseEntity<Map> responseEntity = new ResponseEntity<Map>(map,header,HttpStatusCode.OK);
+		map.put("boardList",boardService.searchBoard(searchVO));
+		
 
-		return responseEntity;
+		return new ResponseEntity<Map<String,List<BoardVO>>>(map,HttpStatus.OK);
 		
 	}
 	
 	//게시물 뷰
 	@RequestMapping(value = "/admin/boards/{idx}", method = RequestMethod.GET)
 	@ResponseBody
-	public ResponseEntity<Map> viewBoardForm(@PathVariable Integer idx, Model model)throws Exception{
-		model.addAttribute("boardVO", boardService.selectBoard(idx));
-		return responseEntity;
-	}
-	//게시물 추가 폼
-	@RequestMapping(value = "/admin/boards/writeForm", method = RequestMethod.GET)
-	public String insertBoardForm(@RequestParam("type") String type, Model model) throws Exception{
-		model.addAttribute("boardType",boardTypeService.selectBoardType());
-		model.addAttribute("type",type);
-		return "on.admin.board.boardWrite";
+	public ResponseEntity<Map<String, BoardVO>> viewBoardForm(@PathVariable Integer idx, Model model)throws Exception{
+		Map<String, BoardVO> map = new HashMap<String, BoardVO>();
+		map.put("boardVO", boardService.selectBoard(idx));
+		return new ResponseEntity<Map<String,BoardVO>>(map, HttpStatus.OK);
 	}
 	
 	//게시물 삭제
 	@ResponseBody
 	@RequestMapping(value = "/admin/boards/{idx}", method = RequestMethod.DELETE)
-	public String deleteBoard(@PathVariable Integer idx) throws Exception{
+	public ResponseEntity<String> deleteBoard(@PathVariable Integer idx) throws Exception{
 		boardService.deleteBoard(idx);
 		
-		return "redirect:/admin/boards";
-		//+type+"?page=1&searchType=&searchKeyword=&ajax="+false
+		return new ResponseEntity<String>("success",HttpStatus.OK);
 	}
 	
 	//게시물 추가
 	@RequestMapping(value = "/admin/boards", method = RequestMethod.POST)
 	@ResponseBody
-	public String insertBoard(BoardVO boardVO, Model model) throws Exception{
-		SearchVO searchVO = new SearchVO(type);
-		searchVO.setPageVO(new PageVO());
-
+	public ResponseEntity<Map<String,BoardVO>> insertBoard(BoardVO boardVO, Model model) throws Exception{
+		Map<String, BoardVO> map = new HashMap<String, BoardVO>();
 		int boardIdx = boardService.insertBoard(boardVO);
 		
-		model.addAttribute("boardList", boardService.searchBoard(searchVO));			//여기서 calcPage가 일어난다.
-		model.addAttribute("searchVO",searchVO);
+		map.put("boardVO", boardService.selectBoard(boardIdx));
 		
-		return "redirect:/admin/boards/"+boardIdx;
+		return new ResponseEntity<Map<String,BoardVO>> (map,HttpStatus.OK);
 	}
 	
 	/**
@@ -105,7 +94,7 @@ public class AdminBoardController {
 		SearchVO searchVO = new SearchVO("notice");
 		searchVO.setPageVO(new PageVO());
 		
-		model.addAttribute("boardList", boardService.searchBoard(searchVO));			//여기서 calcPage가 일어난다.
+		model.addAttribute("boardList", boardService.searchBoard(searchVO));
 		model.addAttribute("searchVO",searchVO);
 		return "on.admin.board.boardList";
 	}
