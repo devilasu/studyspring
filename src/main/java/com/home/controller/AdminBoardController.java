@@ -52,15 +52,15 @@ public class AdminBoardController {
 	}
 	
 	//게시물 뷰
-	@RequestMapping(value = "/admin/boards/{type}/{idx}", method = RequestMethod.GET)
+	@RequestMapping(value = "/admin/boards/{idx}", method = RequestMethod.GET)
 	@ResponseBody
-	public String viewBoardForm(@PathVariable String type, @PathVariable Integer idx, Model model)throws Exception{
+	public String viewBoardForm(@PathVariable Integer idx, Model model)throws Exception{
 		model.addAttribute("boardVO", boardService.selectBoard(idx));
 		return "on.admin.board.boardView";
 	}
 	//게시물 추가 폼
-	@RequestMapping(value = "/admin/boards/{type}/write", method = RequestMethod.GET)
-	public String insertBoardForm(@PathVariable String type, Model model) throws Exception{
+	@RequestMapping(value = "/admin/boards/writeForm", method = RequestMethod.GET)
+	public String insertBoardForm(@RequestParam("type") String type, Model model) throws Exception{
 		model.addAttribute("boardType",boardTypeService.selectBoardType());
 		model.addAttribute("type",type);
 		return "on.admin.board.boardWrite";
@@ -68,8 +68,8 @@ public class AdminBoardController {
 	
 	//게시물 삭제
 	@ResponseBody
-	@RequestMapping(value = "/admin/boards/{type}/{idx}", method = RequestMethod.DELETE)
-	public String deleteBoard(@PathVariable String type, @PathVariable Integer idx) throws Exception{
+	@RequestMapping(value = "/admin/boards/{idx}", method = RequestMethod.DELETE)
+	public String deleteBoard(@PathVariable Integer idx) throws Exception{
 		boardService.deleteBoard(idx);
 		
 		return "redirect:/admin/boards";
@@ -77,9 +77,9 @@ public class AdminBoardController {
 	}
 	
 	//게시물 추가
-	@RequestMapping(value = "/admin/boards/{type}/write", method = RequestMethod.POST)
+	@RequestMapping(value = "/admin/boards", method = RequestMethod.POST)
 	@ResponseBody
-	public String insertBoard(@PathVariable String type, BoardVO boardVO, Model model) throws Exception{
+	public String insertBoard(BoardVO boardVO, Model model) throws Exception{
 		SearchVO searchVO = new SearchVO(type);
 		searchVO.setPageVO(new PageVO());
 
@@ -88,7 +88,7 @@ public class AdminBoardController {
 		model.addAttribute("boardList", boardService.searchBoard(searchVO));			//여기서 calcPage가 일어난다.
 		model.addAttribute("searchVO",searchVO);
 		
-		return "redirect:/admin/boards/"+type+"/"+boardIdx;
+		return "redirect:/admin/boards/"+boardIdx;
 	}
 	
 	/**
