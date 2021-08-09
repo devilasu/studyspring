@@ -71,6 +71,13 @@ public class AdminBoardController {
 		return new ResponseEntity<String>("success",HttpStatus.OK);
 	}
 	
+	//게시물 추가 폼
+	@RequestMapping(value="/admin/boards/new", method = RequestMethod.GET)
+	public String newBoardForm() {
+		//보드타입 목록과 현재 게시판 타입이 필요.
+		return "/admin/board/boardWrite";
+	}
+	
 	//게시물 추가
 	@RequestMapping(value = "/admin/boards", method = RequestMethod.POST)
 	@ResponseBody
