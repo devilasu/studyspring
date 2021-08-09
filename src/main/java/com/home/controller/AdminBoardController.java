@@ -32,6 +32,7 @@ public class AdminBoardController {
 	 * Ajax 호출이 존재하는 함수.
 	 */
 	@RequestMapping(value = "/admin/boards", method = RequestMethod.GET)
+	@ResponseBody
 	public String searchBoardList(@RequestParam("type") String type, @RequestParam("page") Integer page, @RequestParam("searchKeyword") String searchKeyword, @RequestParam("searchType") String searchType, Model model) throws Exception{
 		SearchVO searchVO = new SearchVO(type);
 		if(searchKeyword!=null)
@@ -52,6 +53,7 @@ public class AdminBoardController {
 	
 	//게시물 뷰
 	@RequestMapping(value = "/admin/boards/{type}/{idx}", method = RequestMethod.GET)
+	@ResponseBody
 	public String viewBoardForm(@PathVariable String type, @PathVariable Integer idx, Model model)throws Exception{
 		model.addAttribute("boardVO", boardService.selectBoard(idx));
 		return "on.admin.board.boardView";
@@ -76,6 +78,7 @@ public class AdminBoardController {
 	
 	//게시물 추가
 	@RequestMapping(value = "/admin/boards/{type}/write", method = RequestMethod.POST)
+	@ResponseBody
 	public String insertBoard(@PathVariable String type, BoardVO boardVO, Model model) throws Exception{
 		SearchVO searchVO = new SearchVO(type);
 		searchVO.setPageVO(new PageVO());
