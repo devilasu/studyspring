@@ -3,10 +3,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
         <nav class="nav">
             <ul>
-            <c:forEach var="homeMenuVO" items="${homeMenuList}">
+            <c:forEach var="nav" items="${navList}">
                 <li>
-                    <a href="/home/${homeMenuVO.type}">
-                        ${homeMenuVO.name}
+                    <a href="/home/${nav.type}">
+                        ${nav.name}
                     </a>
                 </li>
             </c:forEach>
