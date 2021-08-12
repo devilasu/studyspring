@@ -105,5 +105,4 @@ public class AdminBoardController {
 		model.addAttribute("searchVO",searchVO);
 		return "on.admin.board.boardList";
 	}
-	
 }
