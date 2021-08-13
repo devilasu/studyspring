@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<c:if test="${leftlist}!=null">
 	<aside class="aside">
 		<ul>
 			<c:forEach var="leftMenu" items="${leftList}" >
@@ -20,7 +19,9 @@
 				$.ajax({
 					url:"/admin/boards?type="+$(this).attr("id")+"&page=1&searchKeyword=&searchType=",
 					type:"GET",
-					datatype:"html",
+					datatype:"json",
+					data: jsonStr,
+					contentType: "application/json; charset=UTF-8",
 					success:function(result){
 						$("section").parent().html(result);
 					},
@@ -31,5 +32,4 @@
 				});
 			});
 		});
-	</script>
-</c:if>          
+	</script>    

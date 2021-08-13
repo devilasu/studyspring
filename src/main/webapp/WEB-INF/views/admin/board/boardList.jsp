@@ -50,7 +50,9 @@ function printBoardList(pageNum){
 	$.ajax({
 		url:"/admin/boards/${searchVO.type}?page="+pageNum+"&searchKeyword="+encodeURI($("#searchKeyword").val(),"UTF-8")+"&searchType="+$("#searchType option:selected").val()+"&ajax=true",
 		type:"GET",
-		dataType:"html",
+		dataType:"json",
+		data:jsonStr,
+		contentType: "application/json;charset=UTF-8",
 		success:function(result){
 			$("section").parent().html(result);
 			},
