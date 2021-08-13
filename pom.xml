@@ -208,10 +208,15 @@
 		</dependency>
 		
 		<!-- jackson 추가 -->
-<!-- 		<dependency>
+<!-- 	<dependency>
+		    <groupId>org.codehaus.jackson</groupId>
+		    <artifactId>jackson-core-asl</artifactId>
+		    <version>1.9.13</version>
+		</dependency>	
+		<dependency>
 		    <groupId>com.fasterxml.jackson.core</groupId>
     		<artifactId>jackson-databind</artifactId>
-    		<version>2.11.2</version>
+    		<version>2.12.4</version>
 		</dependency>
  -->
 	</dependencies>
