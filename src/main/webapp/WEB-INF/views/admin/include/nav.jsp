@@ -4,11 +4,30 @@
         <nav class="nav">
             <ul>
             <c:forEach var="nav" items="${navList}">
-                <li>
-                    <a href="/admin/${nav.type}s">
+                <li class="navVal">
+                    <span style="cursor:pointer;">
                         ${nav.name}
-                    </a>
+                    </span>
                 </li>
             </c:forEach>
             </ul>
         </nav>
+        
+<script>
+$(document).ready(function(){
+	$(".navVal").click(function(){
+		$.ajax({
+			url:"/admin/boards?type=&page=1&searchKeyword=&searchType=",
+			type:"GET",
+			datatype:"text",
+			success:function(result){
+				alert("성공?");
+			},
+			error:function(){
+				alert("서버 전송에 실패했습니다.");
+			}
+			
+		});
+	})
+});
+</script>
