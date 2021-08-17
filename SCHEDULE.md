@@ -1,3 +1,20 @@
+#### 20210817 (화) 잡업 예정
+- jstl의 if 를 사용하면서  css의 재수정 혹은 기존의 2가지 방식으로 가는 것 중 선택 필요.
+- 동일한 원인으로 레이아웃을 새로 구성할 필요가 있다.
+- jackson 설치, responseEntity로 데이터 전송이 가능해졌다.
+- SPA(Single Page Application) 방식 구현이 가능해졌다.
+- 상황에 따라 MPA(Multi Page Application) 방식도 섞어야 할까?
+- 어디부터 어디까지를 Rest로 구성하고 어디를 페이지로 넘겨야 하는가?
+- 페이지는 어떻게 구성할까?
+
+#### 20210811 (토) 작업 예정
+- ajax 전송, ResponseEntity<VO> 형태의 return에서 406에러가 발생.
+- json 형태의 리턴이 문제가 생기는 것으로 예상.
+- ajax의 header와 jackson을 사용하지 않아 발생하는 문제일 것으로 추정.
+
+- 기존 layout으로 구분하던 left메뉴의 on/off는 jstl의 if를 사용하여 서버에서 보내주는 left변수 존재유무로 판별가능.(off 레이아웃 삭제 예정)
+- 
+
 #### 20210810 (금) 작업 예정
 - jstl의 if문을 사용하여 left의 컨트롤이 가능해졌다.
 - tiles에서는 이제 하나의 layout(on,off 구분 필요 X)만 사용하면 된다.
