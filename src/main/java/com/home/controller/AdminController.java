@@ -43,6 +43,6 @@ public class AdminController {
 	@RequestMapping(value = "/admin", method = RequestMethod.GET)
 	public String adminMainPage() throws Exception{
 		logger.info("어드민 컨트롤러 호출");
-		return "no.admin.home.index";
+		return "on.admin.home.index";
 	}
 }
