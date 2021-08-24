@@ -6,6 +6,7 @@ import java.util.Map;
 
 import javax.inject.Inject;
 
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -47,9 +48,12 @@ public class AdminBoardController {
 			searchVO.getPageVO().setPage(page);
 		
 		map.put("boardList",boardService.searchBoard(searchVO));
+		HttpHeaders responseHeader = new HttpHeaders();
+		responseHeader.add("LINKS", "header setting check");
+		ResponseEntity<Map<String,List<BoardVO>>> result =new ResponseEntity<Map<String,List<BoardVO>>>(map, responseHeader,HttpStatus.OK);
 		
 
-		return new ResponseEntity<Map<String,List<BoardVO>>>(map,HttpStatus.OK);
+		return result;
 		
 	}
 	
