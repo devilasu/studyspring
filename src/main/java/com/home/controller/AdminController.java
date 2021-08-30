@@ -26,7 +26,7 @@ public class AdminController {
 	private HomeMenuService homeMenuService;
 	
 	//임시 제작중 페이지.
-	@RequestMapping(value="/noServer",method =RequestMethod.GET)
+	@RequestMapping(value="/no-server",method =RequestMethod.GET)
 	@ResponseBody
 	public ResponseEntity<String> noCreate() {
 		return new ResponseEntity<String>("게시판 제작중입니다.",HttpStatus.NO_CONTENT);
@@ -44,5 +44,6 @@ public class AdminController {
 	public String adminMainPage() throws Exception{
 		logger.info("어드민 컨트롤러 호출");
 		return "on.admin.home.index";
+		
 	}
 }

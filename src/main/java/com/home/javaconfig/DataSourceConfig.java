@@ -24,8 +24,8 @@ public class DataSourceConfig {
 	@Bean
 	public DriverManagerDataSource dataSource() throws Exception{
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName("net.sf.log4jdbc.sql.jdbcapi.DriverSpy");
-		dataSource.setUrl("jdbc:log4jdbc:oracle:thin:@localhost:1521/XE");
+		dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
+		dataSource.setUrl("jdbc:oracle:thin:@localhost:1521/XE");
 		dataSource.setUsername("studydb");
 		dataSource.setPassword("apmsetup");
 		return dataSource;

@@ -21,7 +21,7 @@ $(document).ready(function(){
 			type:"GET",
 			datatype:"text",
 			success:function(result){
-				alert("성공?");
+					$("section").html(result);
 			},
 			error:function(){
 				alert("서버 전송에 실패했습니다.");
